@@ -1,0 +1,4 @@
+repository "GhostHunter2@HomeOfficeGames@cloud"
+  path "/"
+    br "/main"
+    co "/main"
