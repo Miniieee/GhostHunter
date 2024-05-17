@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
     
     [SerializeField] private float playerSpeed = 2.0f;
+    [SerializeField] private float sprintSpeed = 5.0f;
     [SerializeField] private float jumpHeight = 1.0f;
     [SerializeField] private float gravityValue = -9.81f;
 
@@ -21,34 +22,44 @@ public class PlayerMovement : MonoBehaviour
         cameraTransform = Camera.main.transform;
     }
 
-    void Update()
+    private void Update()
+    {
+        Move();
+    }
+
+    private void Move()
     {
         groundedPlayer = controller.isGrounded;
+        
         if (groundedPlayer && playerVelocity.y < 0)
         {
-            playerVelocity.y = 0f;
+            playerVelocity.y = -2f; // Ensure the player stays grounded
         }
 
-        Vector2 movement = inputManager.GetPlayerMovement();
-        Vector3 move = new Vector3(movement.x, 0, movement.y);
-        //move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
-        
-        controller.Move(move * Time.deltaTime * playerSpeed);
-        Debug.Log(cameraTransform.rotation.y);
-        transform.rotation = Quaternion.Euler(0, cameraTransform.rotation.y, 0);
+        Vector2 input = inputManager.GetPlayerMovement();
 
-        /*if (move != Vector3.zero)
-        {
-            gameObject.transform.forward = move;
-        }*/
+        // Calculate the camera forward and right directions
+        Vector3 cameraForward = cameraTransform.forward;
+        Vector3 cameraRight = cameraTransform.right;
 
-        
-        if (Input.GetButtonDown("Jump") && groundedPlayer)
-        {
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
-        }
+        // Project camera directions onto the horizontal plane (y = 0)
+        cameraForward.y = 0f;
+        cameraRight.y = 0f;
+        cameraForward.Normalize();
+        cameraRight.Normalize();
 
+        // Calculate the movement direction based on camera directions
+        Vector3 moveDirection = cameraForward * input.y + cameraRight * input.x;
+        moveDirection.Normalize();
+
+        float currentSpeed = inputManager.GetSprint() ? sprintSpeed : playerSpeed;
+
+        // Move the player
+        controller.Move(moveDirection * currentSpeed * Time.deltaTime);
+
+        // Apply gravity
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
     }
+
 }

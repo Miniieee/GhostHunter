@@ -39,6 +39,11 @@ public class InputManager : MonoBehaviour
         return playerControls.Player.Look.ReadValue<Vector2>();
     }
 
+    public bool GetSprint()
+    {
+        return playerControls.Player.Sprint.IsPressed();
+    }
+
     private void OnEnable()
     {
         playerControls.Enable();
