@@ -1,6 +1,8 @@
 using UnityEngine;
+using Unity.Netcode;
+using Unity.Cinemachine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : NetworkBehaviour
 {
     private CharacterController controller;
     private Vector3 playerVelocity;
@@ -9,21 +11,36 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] private float playerSpeed = 2.0f;
     [SerializeField] private float sprintSpeed = 5.0f;
-    [SerializeField] private float jumpHeight = 1.0f;
     [SerializeField] private float gravityValue = -9.81f;
+    [SerializeField] private CinemachineCamera cinemachineCamera;
 
     private InputManager inputManager;
     private Transform cameraTransform;
+    private AudioListener audioListener;
 
-    private void Start()
+
+    private void Start() 
     {
+        if (!IsOwner) return;
         controller = gameObject.GetComponent<CharacterController>();
         inputManager = InputManager.Instance;
         cameraTransform = Camera.main.transform;
+
+        if (IsLocalPlayer)
+        {
+            audioListener = gameObject.AddComponent<AudioListener>();
+            cinemachineCamera.Priority = 10;
+        } 
+        else
+        {
+            cinemachineCamera.Priority = 0;
+        }
     }
 
     private void Update()
     {
+        if (!IsOwner) return;
+
         Move();
     }
 
