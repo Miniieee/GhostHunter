@@ -7,11 +7,11 @@ public class InputManager : MonoBehaviour
 
 
     public static InputManager Instance
-    { 
-        get 
+    {
+        get
         {
-            return instance; 
-        } 
+            return instance;
+        }
     }
 
     private void Awake()
@@ -32,6 +32,7 @@ public class InputManager : MonoBehaviour
     public Vector2 GetPlayerMovement()
     {
         return playerControls.Player.Move.ReadValue<Vector2>();
+
     }
 
     public Vector2 GetMouseDelta()
@@ -44,12 +45,13 @@ public class InputManager : MonoBehaviour
         return playerControls.Player.Sprint.IsPressed();
     }
 
+
     private void OnEnable()
     {
         playerControls.Enable();
     }
 
-    private void OnDisable()    
+    private void OnDisable()
     {
         playerControls.Disable();
     }
