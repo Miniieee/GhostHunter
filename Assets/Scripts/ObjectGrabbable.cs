@@ -5,17 +5,17 @@ public class ObjectGrabbable : MonoBehaviour, IInteractable
 {
     private Rigidbody rb;
     private float throwForce = 2f;
+    private FollowTransform followTransform;
 
-    private void Start() {
+    private void Awake() {
+        followTransform = GetComponent<FollowTransform>();
         rb = GetComponent<Rigidbody>();
     }
 
     public void StartInteraction(Transform objectGrabPointTransform)
     {
-        transform.parent = objectGrabPointTransform;
-        transform.localPosition = Vector3.zero;
-        transform.rotation = Quaternion.identity;
-
+        followTransform.SetTargetTransform(objectGrabPointTransform);
+        
         rb.isKinematic = true;
     }
 
