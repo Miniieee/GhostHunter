@@ -82,7 +82,14 @@ public class PlayerPickup : NetworkBehaviour
         if(IsOwner) return;
 
         playerReference.TryGet(out NetworkObject networkObject);
-        Debug.Log(playerReference.TryGet(out NetworkObject networkObject2));
+        if (networkObject.transform.Find("MainCamera/ObjectGrabTransform") == null)
+        {
+            Debug.Log("Player not found");
+        }
+        else
+        {
+            Debug.Log("Player found");
+        }
         NetworkObject playerHandNetworkObject = networkObject.GetComponent<NetworkObject>();
         Transform playerHand = playerHandNetworkObject.gameObject.transform;
         
