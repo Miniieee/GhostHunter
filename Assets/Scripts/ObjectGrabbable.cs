@@ -1,3 +1,4 @@
+using Unity.Netcode;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -27,4 +28,5 @@ public class ObjectGrabbable : MonoBehaviour, IInteractable
         // Apply a forward force to throw the object away
         rb.AddForce(transform.forward * throwForce, ForceMode.Impulse);
     }
+
 }

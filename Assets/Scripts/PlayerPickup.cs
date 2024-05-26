@@ -1,64 +1,82 @@
 using System;
+using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerPickup : MonoBehaviour
+public class PlayerPickup : NetworkBehaviour
 {
     private PlayerControls playerControls;
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private Transform objectGrabPointTransform;
+    [SerializeField] private GameObject objectToPickup;
     [SerializeField] private LayerMask pickupLayer;
     [SerializeField] private float pickupRange = 2f;
 
-    private GameObject currentObject;
 
-    private void Awake() {
+    private void Awake()
+    {
         playerControls = new PlayerControls();
     }
-    
-    void Start() 
+
+    void Start()
     {
         playerControls.Player.Interact.performed += ctx => OnPickup();
-        playerControls.Player.Drop.performed += ctx => OnDrop();
     }
 
 
-    private void OnPickup() 
+
+    public override void OnNetworkSpawn()
+    {
+        playerControls.Player.Interact.performed += ctx => OnPickup();
+
+
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        playerControls.Player.Interact.performed -= ctx => OnPickup();
+    }
+
+    private void OnPickup()
     {
 
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit raycastHit, pickupRange, pickupLayer))
         {
-            if(raycastHit.transform.TryGetComponent(out IInteractable interactableObject))
+            if (raycastHit.transform.TryGetComponent(out ObjectGrabbable interactableObject))
             {
-                currentObject = raycastHit.transform.gameObject;
-                interactableObject.StartInteraction(objectGrabPointTransform);
+                SpawnPlaceholderObject();
+                NetworkObject networkObject = interactableObject.gameObject.GetComponent<NetworkObject>();
+                
+                ulong networkObjectId = networkObject.NetworkObjectId;
+                networkObject.Despawn();
             }
         }
-        
+
     }
 
-    private void OnDrop()
+    private void SpawnPlaceholderObject()
     {
-        currentObject.GetComponent<IInteractable>().EndInteraction();
-        currentObject = null;
+        Instantiate(objectToPickup, objectGrabPointTransform.position, objectGrabPointTransform.rotation, objectGrabPointTransform);
     }
 
-    private void OnDrawGizmos() {
+
+    private void OnDrawGizmos()
+    {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, pickupRange);
 
         Gizmos.color = Color.green;
         Gizmos.DrawRay(cameraTransform.position, cameraTransform.forward * pickupRange);
-        
+
     }
 
-    private void OnEnable() 
+    private void OnEnable()
     {
         playerControls.Enable();
     }
 
-    private void OnDisable() 
+    private void OnDisable()
     {
         playerControls.Disable();
     }
-    
+
 }
