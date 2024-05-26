@@ -48,45 +48,50 @@ public class PlayerPickup : NetworkBehaviour
                 NetworkObject networkObject = interactableObject.gameObject.GetComponent<NetworkObject>();
 
                 ulong networkObjectId = networkObject.NetworkObjectId;
-                ulong networkPlayerID = this.gameObject.GetComponent<NetworkObject>().NetworkObjectId;
-                Debug.Log("Player networkobject: " + networkPlayerID);
+                ulong networkPlayerID = NetworkManager.Singleton.LocalClientId;
 
-                DespawnNetworkItemsServerRpc(networkObjectId);
+                DespawnNetworkItemsServerRpc(networkObjectId, networkPlayerID);
 
             }
         }
 
     }
 
-    private void SpawnPlaceholderObject()
+    public void SpawnPlaceholderObject()
     {
         Instantiate(objectToPickup, objectGrabPointTransform.position, objectGrabPointTransform.rotation, objectGrabPointTransform);
     }
 
     [ServerRpc]
-    public void DespawnNetworkItemsServerRpc(ulong networkObjectId)
+    public void DespawnNetworkItemsServerRpc(ulong networkObjectId , ulong networkPlayerID)
     {
-        ulong networkPlayerID = NetworkManager.Singleton.LocalClientId;
+        
         Debug.Log("Player networkobject: " + networkPlayerID);
 
         NetworkObject networkObject = NetworkManager.SpawnManager.SpawnedObjects[networkObjectId];
         networkObject.Despawn();
 
-        SpawnPlaceholderItemsClientRpc(networkPlayerID);
+        NetworkObject playerHand = NetworkManager.Singleton.ConnectedClients[networkPlayerID].PlayerObject;
+
+        SpawnPlaceholderItemsClientRpc(playerHand);
     }
 
     [ClientRpc]
-    public void SpawnPlaceholderItemsClientRpc(ulong networkPlayerID)
+    public void SpawnPlaceholderItemsClientRpc(NetworkObjectReference playerReference)
     {
-        Transform playerHand = NetworkManager.Singleton.ConnectedClients[networkPlayerID].PlayerObject.transform.Find("ObjectGrabTransform");
+        if(IsOwner) return;
+
+        playerReference.TryGet(out NetworkObject networkObject);
+        Debug.Log(playerReference.TryGet(out NetworkObject networkObject2));
+        NetworkObject playerHandNetworkObject = networkObject.GetComponent<NetworkObject>();
+        Transform playerHand = playerHandNetworkObject.gameObject.transform;
+        
         if (playerHand == null)
         {
             Debug.Log("Player hand not found");
         }
 
-        GameObject visualItem = Instantiate(objectToPickup);
-
-        visualItem.transform.parent = playerHand;
+        GameObject visualItem = Instantiate(objectToPickup, playerHand);
 
     }
 
