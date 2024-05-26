@@ -17,10 +17,10 @@ public class PlayerPickup : NetworkBehaviour
         playerControls = new PlayerControls();
     }
 
-    void Start()
+    /*void Start()
     {
         playerControls.Player.Interact.performed += ctx => OnPickup();
-    }
+    }*/
 
 
 
@@ -38,6 +38,7 @@ public class PlayerPickup : NetworkBehaviour
 
     private void OnPickup()
     {
+        if (!IsOwner) return;
 
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit raycastHit, pickupRange, pickupLayer))
         {
@@ -45,9 +46,13 @@ public class PlayerPickup : NetworkBehaviour
             {
                 SpawnPlaceholderObject();
                 NetworkObject networkObject = interactableObject.gameObject.GetComponent<NetworkObject>();
-                
+
                 ulong networkObjectId = networkObject.NetworkObjectId;
-                networkObject.Despawn();
+                ulong networkPlayerID = this.gameObject.GetComponent<NetworkObject>().NetworkObjectId;
+                Debug.Log("Player networkobject: " + networkPlayerID);
+
+                DespawnNetworkItemsServerRpc(networkObjectId);
+
             }
         }
 
@@ -56,6 +61,33 @@ public class PlayerPickup : NetworkBehaviour
     private void SpawnPlaceholderObject()
     {
         Instantiate(objectToPickup, objectGrabPointTransform.position, objectGrabPointTransform.rotation, objectGrabPointTransform);
+    }
+
+    [ServerRpc]
+    public void DespawnNetworkItemsServerRpc(ulong networkObjectId)
+    {
+        ulong networkPlayerID = NetworkManager.Singleton.LocalClientId;
+        Debug.Log("Player networkobject: " + networkPlayerID);
+
+        NetworkObject networkObject = NetworkManager.SpawnManager.SpawnedObjects[networkObjectId];
+        networkObject.Despawn();
+
+        SpawnPlaceholderItemsClientRpc(networkPlayerID);
+    }
+
+    [ClientRpc]
+    public void SpawnPlaceholderItemsClientRpc(ulong networkPlayerID)
+    {
+        Transform playerHand = NetworkManager.Singleton.ConnectedClients[networkPlayerID].PlayerObject.transform.Find("ObjectGrabTransform");
+        if (playerHand == null)
+        {
+            Debug.Log("Player hand not found");
+        }
+
+        GameObject visualItem = Instantiate(objectToPickup);
+
+        visualItem.transform.parent = playerHand;
+
     }
 
 
