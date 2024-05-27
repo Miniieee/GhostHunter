@@ -3,6 +3,7 @@ using UnityEngine;
 public class FollowTransform : MonoBehaviour
 {
     private Transform targetTransform;
+    [SerializeField] Vector3 offset;
 
     public void SetTargetTransform(Transform targetTransform)
     {

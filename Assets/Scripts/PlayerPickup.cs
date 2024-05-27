@@ -27,8 +27,6 @@ public class PlayerPickup : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         playerControls.Player.Interact.performed += ctx => OnPickup();
-
-
     }
 
     public override void OnNetworkDespawn()
@@ -44,13 +42,14 @@ public class PlayerPickup : NetworkBehaviour
         {
             if (raycastHit.transform.TryGetComponent(out ObjectGrabbable interactableObject))
             {
-                SpawnPlaceholderObject();
+                
                 NetworkObject networkObject = interactableObject.gameObject.GetComponent<NetworkObject>();
 
                 ulong networkObjectId = networkObject.NetworkObjectId;
                 ulong networkPlayerID = NetworkManager.Singleton.LocalClientId;
 
                 DespawnNetworkItemsServerRpc(networkObjectId, networkPlayerID);
+                SpawnPlaceholderObject();
 
             }
         }
@@ -81,7 +80,9 @@ public class PlayerPickup : NetworkBehaviour
     {
         if(IsOwner) return;
 
-        playerReference.TryGet(out NetworkObject networkObject);
+        SpawnPlaceholderObject();
+
+        /*xxplayerReference.TryGet(out NetworkObject networkObject);
         if (networkObject.transform.Find("MainCamera/ObjectGrabTransform") == null)
         {
             Debug.Log("Player not found");
@@ -90,15 +91,15 @@ public class PlayerPickup : NetworkBehaviour
         {
             Debug.Log("Player found");
         }
-        NetworkObject playerHandNetworkObject = networkObject.GetComponent<NetworkObject>();
-        Transform playerHand = playerHandNetworkObject.gameObject.transform;
+        NetworkObject playerHandNetworkObject = networkObject.GetComponentInChildren<NetworkObject>();
+        Transform playerHand = playerHandNetworkObject.transform;
         
         if (playerHand == null)
         {
             Debug.Log("Player hand not found");
         }
 
-        GameObject visualItem = Instantiate(objectToPickup, playerHand);
+        Instantiate(objectToPickup, playerHand);*/
 
     }
 

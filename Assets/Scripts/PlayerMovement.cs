@@ -28,7 +28,6 @@ public class PlayerMovement : NetworkBehaviour
 
         if (IsLocalPlayer)
         {
-            audioListener = gameObject.AddComponent<AudioListener>();
             cinemachineCamera.Priority = 10;
         } 
         else
