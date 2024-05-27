@@ -12,16 +12,6 @@ public class PlayerPickup : NetworkBehaviour
     [SerializeField] private float pickupRange = 2f;
 
 
-    private void Awake()
-    {
-        playerControls = new PlayerControls();
-    }
-
-    /*void Start()
-    {
-        playerControls.Player.Interact.performed += ctx => OnPickup();
-    }*/
-
 
 
     public override void OnNetworkSpawn()
@@ -42,15 +32,12 @@ public class PlayerPickup : NetworkBehaviour
         {
             if (raycastHit.transform.TryGetComponent(out ObjectGrabbable interactableObject))
             {
-                
                 NetworkObject networkObject = interactableObject.gameObject.GetComponent<NetworkObject>();
 
                 ulong networkObjectId = networkObject.NetworkObjectId;
-                ulong networkPlayerID = NetworkManager.Singleton.LocalClientId;
 
-                DespawnNetworkItemsServerRpc(networkObjectId, networkPlayerID);
+                DespawnNetworkItemsServerRpc(networkObjectId);
                 SpawnPlaceholderObject();
-
             }
         }
 
@@ -62,45 +49,20 @@ public class PlayerPickup : NetworkBehaviour
     }
 
     [ServerRpc]
-    public void DespawnNetworkItemsServerRpc(ulong networkObjectId , ulong networkPlayerID)
+    public void DespawnNetworkItemsServerRpc(ulong networkObjectId)
     {
-        
-        Debug.Log("Player networkobject: " + networkPlayerID);
-
         NetworkObject networkObject = NetworkManager.SpawnManager.SpawnedObjects[networkObjectId];
         networkObject.Despawn();
 
-        NetworkObject playerHand = NetworkManager.Singleton.ConnectedClients[networkPlayerID].PlayerObject;
-
-        SpawnPlaceholderItemsClientRpc(playerHand);
+        SpawnPlaceholderItemsClientRpc();
     }
 
     [ClientRpc]
-    public void SpawnPlaceholderItemsClientRpc(NetworkObjectReference playerReference)
+    public void SpawnPlaceholderItemsClientRpc()
     {
-        if(IsOwner) return;
+        if (IsOwner) return;
 
         SpawnPlaceholderObject();
-
-        /*xxplayerReference.TryGet(out NetworkObject networkObject);
-        if (networkObject.transform.Find("MainCamera/ObjectGrabTransform") == null)
-        {
-            Debug.Log("Player not found");
-        }
-        else
-        {
-            Debug.Log("Player found");
-        }
-        NetworkObject playerHandNetworkObject = networkObject.GetComponentInChildren<NetworkObject>();
-        Transform playerHand = playerHandNetworkObject.transform;
-        
-        if (playerHand == null)
-        {
-            Debug.Log("Player hand not found");
-        }
-
-        Instantiate(objectToPickup, playerHand);*/
-
     }
 
 
@@ -112,6 +74,12 @@ public class PlayerPickup : NetworkBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawRay(cameraTransform.position, cameraTransform.forward * pickupRange);
 
+    }
+
+
+    private void Awake()
+    {
+        playerControls = new PlayerControls();
     }
 
     private void OnEnable()
