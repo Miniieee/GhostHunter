@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b01a2da880851540bd637df8348f7ca, type: 3}
   m_Name: EMF_ReaderSO
   m_EditorClassIdentifier: 
+  equipmentNetworkPrefab: {fileID: 8606766432525677704, guid: 34f8efa13b8a9d24ea46272d4017c235, type: 3}
   equipmentPrefab: {fileID: 0}
-  equipmentName: 
+  equipmentName: EMF

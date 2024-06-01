@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 5311404859487156810}
   - component: {fileID: 2212904320734834603}
   m_Layer: 7
-  m_Name: Interactable
+  m_Name: EMF Network
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5c231e54911110645b48d731bda3f591, type: 2}
+  - {fileID: 2100000, guid: d8ff57423281fac498c63bbceb5f84a2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 421271531
-  InScenePlacedSourceGlobalObjectIdHash: 421271531
+  GlobalObjectIdHash: 899020603
+  InScenePlacedSourceGlobalObjectIdHash: 4012274518
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
