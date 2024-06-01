@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FlashlightSO
   m_EditorClassIdentifier: 
   equipmentNetworkPrefab: {fileID: 7866915758831821183, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
-  equipmentPrefab: {fileID: 0}
+  equipmentPrefab: {fileID: 8621085789441284983, guid: ea451218566a4bd43affa61c567d31f8, type: 3}
   equipmentName: Flashlight

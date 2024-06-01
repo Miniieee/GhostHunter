@@ -19,6 +19,7 @@ public class EquipmentNetworkSpawner : NetworkBehaviour
         for (int i = 0; i < equipmentSOs.Count; i++)
         {
             GameObject spawnedObject = Instantiate(equipmentSOs[i].equipmentNetworkPrefab.gameObject, equipmentListTransform[i].position, equipmentListTransform[i].rotation);
+            spawnedObject.GetComponent<ObjectGrabbable>().equipmentSO = equipmentSOs[i];
             spawnedObject.GetComponent<NetworkObject>().Spawn();
         }
 

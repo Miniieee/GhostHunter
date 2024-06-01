@@ -8,6 +8,8 @@ public class ObjectGrabbable : MonoBehaviour, IInteractable
     private float throwForce = 2f;
     private FollowTransform followTransform;
 
+    public EquipmentSO equipmentSO;
+
     private void Awake() {
         followTransform = GetComponent<FollowTransform>();
         rb = GetComponent<Rigidbody>();

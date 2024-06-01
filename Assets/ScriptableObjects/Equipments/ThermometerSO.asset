@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ThermometerSO
   m_EditorClassIdentifier: 
   equipmentNetworkPrefab: {fileID: 2464418532727536662, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
-  equipmentPrefab: {fileID: 0}
+  equipmentPrefab: {fileID: 7825936489116692872, guid: 78325c37e062b994187e6d04677cf7bc, type: 3}
   equipmentName: Thermometer

@@ -7,12 +7,12 @@ public class PlayerPickup : NetworkBehaviour
     private PlayerControls playerControls;
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private Transform objectGrabPointTransform;
-    [SerializeField] private GameObject objectToPickup;
+
     [SerializeField] private LayerMask pickupLayer;
     [SerializeField] private float pickupRange = 2f;
 
 
-
+    private GameObject objectToPickup;
 
     public override void OnNetworkSpawn()
     {
@@ -33,6 +33,8 @@ public class PlayerPickup : NetworkBehaviour
             if (raycastHit.transform.TryGetComponent(out ObjectGrabbable interactableObject))
             {
                 NetworkObject networkObject = interactableObject.gameObject.GetComponent<NetworkObject>();
+
+                objectToPickup = interactableObject.equipmentSO.equipmentPrefab;
 
                 ulong networkObjectId = networkObject.NetworkObjectId;
 
