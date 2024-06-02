@@ -12,7 +12,7 @@ public class PlayerPickup : NetworkBehaviour
     [SerializeField] private float pickupRange = 2f;
 
 
-    public GameObject objectToPickup;
+    //public GameObject objectToPickup;
 
     public override void OnNetworkSpawn()
     {
@@ -35,7 +35,7 @@ public class PlayerPickup : NetworkBehaviour
                 NetworkObject networkObject = interactableObject.gameObject.GetComponent<NetworkObject>();
 
                 EquipmentSO equipmentSO = interactableObject.equipmentSO;
-                objectToPickup = equipmentSO.equipmentPrefab;
+                GameObject objectToPickup = equipmentSO.equipmentPrefab;
 
                 if (equipmentSO == null)
                 {

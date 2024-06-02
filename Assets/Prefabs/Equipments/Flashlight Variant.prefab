@@ -50,13 +50,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6166615857757903611, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 3241268880
+      value: 2050987038
       objectReference: {fileID: 0}
     - target: {fileID: 7866915758831821183, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
       propertyPath: m_Name
       value: Flashlight Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6823734276336038596, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
+    - {fileID: 3826844400977956654, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
+    - {fileID: 8100163319472973742, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
+    - {fileID: 5984728635875634521, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
+    - {fileID: 632742170766115235, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
+    - {fileID: 6166615857757903611, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
