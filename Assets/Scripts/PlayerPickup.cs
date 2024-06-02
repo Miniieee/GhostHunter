@@ -5,14 +5,12 @@ using UnityEngine;
 public class PlayerPickup : NetworkBehaviour
 {
     private PlayerControls playerControls;
+    
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private Transform objectGrabPointTransform;
-
     [SerializeField] private LayerMask pickupLayer;
     [SerializeField] private float pickupRange = 2f;
 
-
-    //public GameObject objectToPickup;
 
     public override void OnNetworkSpawn()
     {
@@ -32,20 +30,20 @@ public class PlayerPickup : NetworkBehaviour
         {
             if (raycastHit.transform.TryGetComponent(out ObjectGrabbable interactableObject))
             {
-                NetworkObject networkObject = interactableObject.gameObject.GetComponent<NetworkObject>();
+                NetworkObject pickedupNetworkObject = interactableObject.gameObject.GetComponent<NetworkObject>();
 
-                EquipmentSO equipmentSO = interactableObject.equipmentSO;
-                GameObject objectToPickup = equipmentSO.equipmentPrefab;
+                EquipmentSO pickedUpEquipmentSO = interactableObject.equipmentSO;
+                GameObject objectToPickup = pickedUpEquipmentSO.equipmentPrefab;
 
-                if (equipmentSO == null)
+                if (pickedUpEquipmentSO == null)
                 {
                     Debug.LogError("EquipmentSO is null");
                     return;
                 }
 
-                ulong networkObjectId = networkObject.NetworkObjectId;
+                ulong pickedUpObjectNetworkID = pickedupNetworkObject.NetworkObjectId;
 
-                DespawnNetworkItemsServerRpc(networkObjectId);
+                SpawnPlaceholderObjectServerRpc(pickedUpObjectNetworkID);
                 SpawnPlaceholderObject(objectToPickup);
             }
         }
@@ -58,29 +56,26 @@ public class PlayerPickup : NetworkBehaviour
     }
 
     [ServerRpc]
-    public void DespawnNetworkItemsServerRpc(ulong networkObjectId)
+    public void SpawnPlaceholderObjectServerRpc(ulong pickedUpNetworkObjectId)
     {
-        NetworkObject networkObject = NetworkManager.SpawnManager.SpawnedObjects[networkObjectId];
-        SpawnPlaceholderItemsClientRpc(networkObject);
+        NetworkObject pickedUpNetworkObjectOnServer = NetworkManager.SpawnManager.SpawnedObjects[pickedUpNetworkObjectId];
+        SpawnPlaceholderObjectClientRpc(pickedUpNetworkObjectOnServer);
 
-
-        networkObject.Despawn();
+        //despawn at last to have a reference in ClientRpc
+        pickedUpNetworkObjectOnServer.Despawn();
     }
 
     [ClientRpc]
-    public void SpawnPlaceholderItemsClientRpc(NetworkObjectReference networkObjectReference)
+    public void SpawnPlaceholderObjectClientRpc(NetworkObjectReference PickedUpNetworkObjectReference)
     {   
-        Debug.Log("SpawnPlaceholderItemsClientRpc" + networkObjectReference);
-
-
-        networkObjectReference.TryGet(out NetworkObject objectToSpawn);
-
-        GameObject objectToSpawnGO = objectToSpawn.GetComponent<NetworkObject>().gameObject;
-        GameObject objectToSpawnPrefab = objectToSpawnGO.GetComponent<ObjectGrabbable>().equipmentSO.equipmentPrefab;
-        
         if (IsOwner) return;
+        
+        PickedUpNetworkObjectReference.TryGet(out NetworkObject objectToSpawnNetworkObject);
 
-        SpawnPlaceholderObject(objectToSpawnPrefab);
+        GameObject objectToSpawnGameObject = objectToSpawnNetworkObject.GetComponent<NetworkObject>().gameObject;
+        GameObject objectToSpawnPrefabSO = objectToSpawnGameObject.GetComponent<ObjectGrabbable>().equipmentSO.equipmentPrefab;
+
+        SpawnPlaceholderObject(objectToSpawnPrefabSO);
     }
 
 
