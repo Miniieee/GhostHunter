@@ -31,4 +31,9 @@ public class ObjectGrabbable : MonoBehaviour, IInteractable
         rb.AddForce(transform.forward * throwForce, ForceMode.Impulse);
     }
 
+    public EquipmentSO GetEquipmentSO()
+    {
+        return equipmentSO;
+    }
+
 }
