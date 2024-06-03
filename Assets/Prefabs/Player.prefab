@@ -96,6 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5806555793743000809}
   - component: {fileID: 3877892189123428939}
+  - component: {fileID: 7308462769044077969}
   m_Layer: 6
   m_Name: Followtarget
   m_TagString: Untagged
@@ -149,6 +150,18 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
+--- !u!114 &7308462769044077969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505286423386910472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10172a0036f93b74383275fa39ddb24f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1579094249820689430
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 4272613250
+  GlobalObjectIdHash: 2636098830
   InScenePlacedSourceGlobalObjectIdHash: 2636098830
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -293,9 +306,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd84be84f8284574aab434d2c16a733b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxNumberOfEquipments: 2
   cameraTransform: {fileID: 1029834476231775742}
   objectGrabPointTransform: {fileID: 5806555793743000809}
-  objectToPickup: {fileID: 6407681790125921563, guid: 1dbc296b20a1b6349aaeb519e452d0d6, type: 3}
   pickupLayer:
     serializedVersion: 2
     m_Bits: 183
@@ -328,7 +341,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5688739757394674407}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.36001873, y: -0.20559035, z: 0.08166525, w: 0.90633875}
+  m_LocalRotation: {x: 0.24111281, y: -0.6267695, z: 0.21293622, w: 0.7097061}
   m_LocalPosition: {x: 0, y: 1.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -406,7 +419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ReferenceFrame: 0
   PanAxis:
-    Value: -25.56095
+    Value: -82.89799
     Center: 0
     Range: {x: -180, y: 180}
     Wrap: 1
@@ -416,7 +429,7 @@ MonoBehaviour:
       Time: 2
     Restrictions: 0
   TiltAxis:
-    Value: 43.32824
+    Value: 37.52896
     Center: 0
     Range: {x: -70, y: 70}
     Wrap: 0

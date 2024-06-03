@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerPickup : NetworkBehaviour
 {
     private PlayerControls playerControls;
-    
+    private HandEquipmentInventory handEquipmentInventory;
+    private int selectedEquipmentIndex;
+
+    [SerializeField] private int maxNumberOfEquipments = 3;
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private Transform objectGrabPointTransform;
     [SerializeField] private LayerMask pickupLayer;
@@ -15,6 +18,8 @@ public class PlayerPickup : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         playerControls.Player.Interact.performed += ctx => OnPickup();
+
+        selectedEquipmentIndex = 0;
     }
 
     public override void OnNetworkDespawn()
@@ -22,9 +27,15 @@ public class PlayerPickup : NetworkBehaviour
         playerControls.Player.Interact.performed -= ctx => OnPickup();
     }
 
+    private void Update() {
+        float equipmentSwich = playerControls.Player.EquipmentSwich.ReadValue<float>();
+        Debug.Log(equipmentSwich);
+    }
+
     private void OnPickup()
     {
         if (!IsOwner) return;
+        if (IsInventoryFull()) return;
 
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit raycastHit, pickupRange, pickupLayer))
         {
@@ -34,6 +45,8 @@ public class PlayerPickup : NetworkBehaviour
 
                 EquipmentSO pickedUpEquipmentSO = interactableObject.equipmentSO;
                 GameObject objectToPickup = pickedUpEquipmentSO.equipmentPrefab;
+
+
 
                 if (pickedUpEquipmentSO == null)
                 {
@@ -45,6 +58,7 @@ public class PlayerPickup : NetworkBehaviour
 
                 SpawnPlaceholderObjectServerRpc(pickedUpObjectNetworkID);
                 SpawnPlaceholderObject(objectToPickup);
+                PickUpEquipment();
             }
         }
 
@@ -67,16 +81,24 @@ public class PlayerPickup : NetworkBehaviour
 
     [ClientRpc]
     public void SpawnPlaceholderObjectClientRpc(NetworkObjectReference PickedUpNetworkObjectReference)
-    {   
+    {
         if (IsOwner) return;
-        
+
         PickedUpNetworkObjectReference.TryGet(out NetworkObject objectToSpawnNetworkObject);
 
         GameObject objectToSpawnGameObject = objectToSpawnNetworkObject.GetComponent<NetworkObject>().gameObject;
         GameObject objectToSpawnPrefabSO = objectToSpawnGameObject.GetComponent<ObjectGrabbable>().equipmentSO.equipmentPrefab;
 
         SpawnPlaceholderObject(objectToSpawnPrefabSO);
+        PickUpEquipment();
     }
+
+    private void PickUpEquipment()
+    {
+        handEquipmentInventory.SelectEquipment(selectedEquipmentIndex);
+        selectedEquipmentIndex++;
+    }
+
 
 
     private void OnDrawGizmos()
@@ -93,6 +115,7 @@ public class PlayerPickup : NetworkBehaviour
     private void Awake()
     {
         playerControls = new PlayerControls();
+        handEquipmentInventory = objectGrabPointTransform.GetComponent<HandEquipmentInventory>();
     }
 
     private void OnEnable()
@@ -103,6 +126,11 @@ public class PlayerPickup : NetworkBehaviour
     private void OnDisable()
     {
         playerControls.Disable();
+    }
+
+    private bool IsInventoryFull()
+    {
+        return selectedEquipmentIndex >= maxNumberOfEquipments;
     }
 
 }
