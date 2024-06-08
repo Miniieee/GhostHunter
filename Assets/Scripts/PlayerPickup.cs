@@ -8,6 +8,9 @@ public class PlayerPickup : NetworkBehaviour
     private HandEquipmentInventory handEquipmentInventory;
     private int selectedEquipmentIndex;
 
+    private GameObject pickedUpObject;
+    GameObject spawnedObject;
+
     [SerializeField] private int maxNumberOfEquipments = 3;
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private Transform objectGrabPointTransform;
@@ -18,6 +21,7 @@ public class PlayerPickup : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         playerControls.Player.Interact.performed += ctx => OnPickup();
+        playerControls.Player.Drop.performed += ctx => OnDrop();
 
         selectedEquipmentIndex = 0;
     }
@@ -25,12 +29,14 @@ public class PlayerPickup : NetworkBehaviour
     public override void OnNetworkDespawn()
     {
         playerControls.Player.Interact.performed -= ctx => OnPickup();
+        playerControls.Player.Drop.performed -= ctx => OnDrop();
+
     }
 
-    private void Update() {
+    /*private void Update() {
         float equipmentSwich = playerControls.Player.EquipmentSwich.ReadValue<float>();
         Debug.Log(equipmentSwich);
-    }
+    }*/
 
     private void OnPickup()
     {
@@ -47,7 +53,6 @@ public class PlayerPickup : NetworkBehaviour
                 GameObject objectToPickup = pickedUpEquipmentSO.equipmentPrefab;
 
 
-
                 if (pickedUpEquipmentSO == null)
                 {
                     Debug.LogError("EquipmentSO is null");
@@ -58,7 +63,7 @@ public class PlayerPickup : NetworkBehaviour
 
                 SpawnPlaceholderObjectServerRpc(pickedUpObjectNetworkID);
                 SpawnPlaceholderObject(objectToPickup);
-                PickUpEquipment();
+                //PickUpEquipment();
             }
         }
 
@@ -66,7 +71,7 @@ public class PlayerPickup : NetworkBehaviour
 
     public void SpawnPlaceholderObject(GameObject _objectToPickup)
     {
-        Instantiate(_objectToPickup, objectGrabPointTransform.position, objectGrabPointTransform.rotation, objectGrabPointTransform);
+        pickedUpObject = Instantiate(_objectToPickup, objectGrabPointTransform.position, objectGrabPointTransform.rotation, objectGrabPointTransform);
     }
 
     [ServerRpc]
@@ -90,7 +95,7 @@ public class PlayerPickup : NetworkBehaviour
         GameObject objectToSpawnPrefabSO = objectToSpawnGameObject.GetComponent<ObjectGrabbable>().equipmentSO.equipmentPrefab;
 
         SpawnPlaceholderObject(objectToSpawnPrefabSO);
-        PickUpEquipment();
+        //PickUpEquipment();
     }
 
     private void PickUpEquipment()
@@ -99,7 +104,32 @@ public class PlayerPickup : NetworkBehaviour
         selectedEquipmentIndex++;
     }
 
+    private void OnDrop()
+    {
+        if (!IsOwner) return;
 
+        OnDropServerRpc();
+        Destroy(pickedUpObject);
+    }
+
+    [ServerRpc]
+    public void OnDropServerRpc()
+    {
+        GameObject objecttospawn = pickedUpObject.GetComponent<ObjectGrabbable>().equipmentSO.equipmentNetworkPrefab;
+        spawnedObject = Instantiate(objecttospawn, objectGrabPointTransform.position, objectGrabPointTransform.rotation, objectGrabPointTransform);
+
+        spawnedObject.GetComponent<NetworkObject>().Spawn();
+        spawnedObject.GetComponent<Rigidbody>().AddForce(cameraTransform.forward * 10f, ForceMode.Impulse);
+        
+        OnDropClientRpc();
+    }
+
+    [ClientRpc]
+    public void OnDropClientRpc()
+    {
+        if (IsOwner) return;
+        Destroy(pickedUpObject);
+    }
 
     private void OnDrawGizmos()
     {

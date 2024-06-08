@@ -93,12 +93,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""EquipmentSwich"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""000e261e-910d-4997-abac-6d09434931dd"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
