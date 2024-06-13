@@ -47,6 +47,8 @@ public class PlayerPickup : NetworkBehaviour
         {
             if (raycastHit.transform.TryGetComponent(out ObjectGrabbable interactableObject))
             {
+                Debug.Log("Pickup");
+
                 NetworkObject pickedupNetworkObject = interactableObject.gameObject.GetComponent<NetworkObject>();
 
                 EquipmentSO pickedUpEquipmentSO = interactableObject.equipmentSO;
@@ -63,7 +65,7 @@ public class PlayerPickup : NetworkBehaviour
 
                 SpawnPlaceholderObjectServerRpc(pickedUpObjectNetworkID);
                 SpawnPlaceholderObject(objectToPickup);
-                //PickUpEquipment();
+                PickUpEquipment();
             }
         }
 
@@ -107,9 +109,14 @@ public class PlayerPickup : NetworkBehaviour
     private void OnDrop()
     {
         if (!IsOwner) return;
+        
+        selectedEquipmentIndex--;
+        
+        pickedUpObject = handEquipmentInventory.ActiveHandEquipment();
 
         OnDropServerRpc();
         Destroy(pickedUpObject);
+        handEquipmentInventory.SelectEquipment(selectedEquipmentIndex);
     }
 
     [ServerRpc]
@@ -119,7 +126,7 @@ public class PlayerPickup : NetworkBehaviour
         spawnedObject = Instantiate(objecttospawn, objectGrabPointTransform.position, objectGrabPointTransform.rotation, objectGrabPointTransform);
 
         spawnedObject.GetComponent<NetworkObject>().Spawn();
-        spawnedObject.GetComponent<Rigidbody>().AddForce(cameraTransform.forward * 10f, ForceMode.Impulse);
+        spawnedObject.GetComponent<Rigidbody>().AddForce(spawnedObject.transform.forward * 10f, ForceMode.Impulse);
         
         OnDropClientRpc();
     }
@@ -138,14 +145,13 @@ public class PlayerPickup : NetworkBehaviour
 
         Gizmos.color = Color.green;
         Gizmos.DrawRay(cameraTransform.position, cameraTransform.forward * pickupRange);
-
     }
 
 
     private void Awake()
     {
         playerControls = new PlayerControls();
-        handEquipmentInventory = objectGrabPointTransform.GetComponent<HandEquipmentInventory>();
+        handEquipmentInventory = GetComponent<HandEquipmentInventory>();
     }
 
     private void OnEnable()

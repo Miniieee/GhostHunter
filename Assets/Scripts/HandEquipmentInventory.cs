@@ -1,23 +1,92 @@
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class HandEquipmentInventory : MonoBehaviour
+public class HandEquipmentInventory : NetworkBehaviour
 {
-    //private List<GameObject> handEquipmentList = new List<GameObject>();
+    private PlayerControls playerControls;
+    private List<GameObject> handEquipmentList = new List<GameObject>();
 
-    public void SelectEquipment(int selectedEquipmentIndex)
+    private int selectedEquipmentIndex = 0;
+    private int maxNumberOfEquipments = 3;
+    private int currentlySelectedEquipmentIndex;
+
+    [SerializeField] private Transform handEquipmentTransform;
+    
+    
+    public override void OnNetworkSpawn()
     {
-        int i = 0;
+        playerControls.Player.EquipmentSwich.performed += ctx => SelectEquipment(playerControls.Player.EquipmentSwich.ReadValue<float>());
+    }
 
-        foreach (Transform equipment in transform)
+    public override void OnNetworkDespawn()
+    {
+        playerControls.Player.EquipmentSwich.performed -= ctx => SelectEquipment(playerControls.Player.EquipmentSwich.ReadValue<float>());
+    }
+
+
+    private void Awake()
+    {
+        playerControls = new PlayerControls();
+    }
+
+    private void Start() {
+        selectedEquipmentIndex = 0;
+    }
+
+    public void SelectEquipment(float selectedEquipmentChangeDiretctionValue)
+    {
+        if(handEquipmentTransform.childCount == 0) { return; }
+
+        int i = 0;
+        currentlySelectedEquipmentIndex = GetSelectedEquipmentIndex(selectedEquipmentChangeDiretctionValue);
+
+        foreach (Transform equipment in handEquipmentTransform)
         {
-            equipment.gameObject.SetActive(i == selectedEquipmentIndex);
+            equipment.gameObject.SetActive(i == currentlySelectedEquipmentIndex);
             i++;
         }
     }
 
+    public GameObject ActiveHandEquipment()
+    {
+        int i = 0;
+
+        foreach (Transform equipment in handEquipmentTransform)
+        {
+            if (i == currentlySelectedEquipmentIndex)
+            {
+                return equipment.gameObject;
+            }
+            i++;
+        }
+
+        return null;
+    }
+
+    private int GetSelectedEquipmentIndex(float selectedEquipmentChangeDiretctionValue)
+    {
+        int equipmentIndexChange = Mathf.RoundToInt(selectedEquipmentChangeDiretctionValue);
+
+        selectedEquipmentIndex += equipmentIndexChange;
+
+        maxNumberOfEquipments = handEquipmentTransform.childCount;
+
+        if(selectedEquipmentIndex >= maxNumberOfEquipments)
+        {
+            selectedEquipmentIndex = 0;
+        }
+        else if(selectedEquipmentIndex < 0)
+        {
+            selectedEquipmentIndex = maxNumberOfEquipments - 1;
+        }
+
+        Debug.Log(selectedEquipmentIndex);
+        return selectedEquipmentIndex;
+    }
 
 
+    
 
 
     /*public void AddHandEquipment(GameObject equipment)
@@ -52,4 +121,13 @@ public class HandEquipmentInventory : MonoBehaviour
         handEquipmentList.Remove(equipment);
         currentNumberOfEquipment--;
     }*/
+
+    private void OnEnable() {
+        playerControls.Enable();
+
+    }
+
+    private void OnDisable() {
+        playerControls.Disable();
+    }
 }
