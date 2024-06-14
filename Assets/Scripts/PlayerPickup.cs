@@ -33,10 +33,6 @@ public class PlayerPickup : NetworkBehaviour
 
     }
 
-    /*private void Update() {
-        float equipmentSwich = playerControls.Player.EquipmentSwich.ReadValue<float>();
-        Debug.Log(equipmentSwich);
-    }*/
 
     private void OnPickup()
     {

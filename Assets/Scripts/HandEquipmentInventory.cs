@@ -68,6 +68,8 @@ public class HandEquipmentInventory : NetworkBehaviour
     {
         int equipmentIndexChange = Mathf.RoundToInt(selectedEquipmentChangeDiretctionValue);
 
+        //TODO something wrong is here
+
         selectedEquipmentIndex += equipmentIndexChange;
 
         maxNumberOfEquipments = handEquipmentTransform.childCount;
