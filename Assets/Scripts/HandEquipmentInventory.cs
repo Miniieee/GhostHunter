@@ -66,7 +66,7 @@ public class HandEquipmentInventory : NetworkBehaviour
 
     private int GetSelectedEquipmentIndex(float selectedEquipmentChangeDiretctionValue)
     {
-        int equipmentIndexChange = Mathf.RoundToInt(selectedEquipmentChangeDiretctionValue);
+        int equipmentIndexChange = Mathf.RoundToInt(Mathf.Sign(selectedEquipmentChangeDiretctionValue));
 
         //TODO something wrong is here
 
