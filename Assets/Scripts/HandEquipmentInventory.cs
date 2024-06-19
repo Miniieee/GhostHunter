@@ -5,7 +5,7 @@ using UnityEngine;
 public class HandEquipmentInventory : NetworkBehaviour
 {
     private PlayerControls playerControls;
-    private List<GameObject> handEquipmentList = new List<GameObject>();
+    //private List<GameObject> handEquipmentList = new List<GameObject>();
 
     private int selectedEquipmentIndex = 0;
     private int maxNumberOfEquipments = 3;
@@ -36,8 +36,14 @@ public class HandEquipmentInventory : NetworkBehaviour
 
     public void SelectEquipment(float selectedEquipmentChangeDiretctionValue)
     {
-        if(handEquipmentTransform.childCount == 0) { return; }
+        if(!IsOwner) { return; }
+        if (handEquipmentTransform.childCount == 0) { return; }
 
+        ActivateSelectedEquipment(selectedEquipmentChangeDiretctionValue);
+    }
+
+    private void ActivateSelectedEquipment(float selectedEquipmentChangeDiretctionValue)
+    {
         int i = 0;
         currentlySelectedEquipmentIndex = GetSelectedEquipmentIndex(selectedEquipmentChangeDiretctionValue);
 
@@ -66,9 +72,9 @@ public class HandEquipmentInventory : NetworkBehaviour
 
     private int GetSelectedEquipmentIndex(float selectedEquipmentChangeDiretctionValue)
     {
+        //round float to integer and then show change direction so the float value doesent matter 
         int equipmentIndexChange = Mathf.RoundToInt(Mathf.Sign(selectedEquipmentChangeDiretctionValue));
 
-        //TODO something wrong is here
 
         selectedEquipmentIndex += equipmentIndexChange;
 

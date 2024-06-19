@@ -93,7 +93,7 @@ public class PlayerPickup : NetworkBehaviour
         GameObject objectToSpawnPrefabSO = objectToSpawnGameObject.GetComponent<ObjectGrabbable>().equipmentSO.equipmentPrefab;
 
         SpawnPlaceholderObject(objectToSpawnPrefabSO);
-        //PickUpEquipment();
+        PickUpEquipment();
     }
 
     private void PickUpEquipment()
@@ -106,6 +106,8 @@ public class PlayerPickup : NetworkBehaviour
     {
         if (!IsOwner) return;
         
+        if(selectedEquipmentIndex == 0) { return; }
+
         selectedEquipmentIndex--;
         
         pickedUpObject = handEquipmentInventory.ActiveHandEquipment();
