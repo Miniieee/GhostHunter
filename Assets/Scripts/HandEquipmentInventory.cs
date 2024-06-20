@@ -56,15 +56,24 @@ public class HandEquipmentInventory : NetworkBehaviour
 
     public GameObject ActiveHandEquipment()
     {
-        int i = 0;
+        //int i = 0;
 
         foreach (Transform equipment in handEquipmentTransform)
         {
+            if (equipment.gameObject.activeSelf == true)
+            {
+                return equipment.gameObject;
+            }
+
+
+           
+            /*
+
             if (i == currentlySelectedEquipmentIndex)
             {
                 return equipment.gameObject;
             }
-            i++;
+            i++;*/
         }
 
         return null;
