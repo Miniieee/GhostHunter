@@ -37,9 +37,10 @@ public class HandEquipmentInventory : NetworkBehaviour
     public void SelectEquipment(float selectedEquipmentChangeDiretctionValue)
     {
         if(!IsOwner) { return; }
-        if (handEquipmentTransform.childCount == 0) { return; }
 
+        if (handEquipmentTransform.childCount == 0) { return; }
         ActivateSelectedEquipment(selectedEquipmentChangeDiretctionValue);
+        ActivateSelectedEquipmentRpc(selectedEquipmentChangeDiretctionValue);
     }
 
     private void ActivateSelectedEquipment(float selectedEquipmentChangeDiretctionValue)
@@ -54,26 +55,21 @@ public class HandEquipmentInventory : NetworkBehaviour
         }
     }
 
+    [Rpc(SendTo.Everyone)]
+    public void ActivateSelectedEquipmentRpc(float selectedEquipmentChangeDiretctionValue)
+    {
+        if(IsOwner) { return; }
+        ActivateSelectedEquipment(selectedEquipmentChangeDiretctionValue);
+    }
+
     public GameObject ActiveHandEquipment()
     {
-        //int i = 0;
-
         foreach (Transform equipment in handEquipmentTransform)
         {
             if (equipment.gameObject.activeSelf == true)
             {
                 return equipment.gameObject;
             }
-
-
-           
-            /*
-
-            if (i == currentlySelectedEquipmentIndex)
-            {
-                return equipment.gameObject;
-            }
-            i++;*/
         }
 
         return null;

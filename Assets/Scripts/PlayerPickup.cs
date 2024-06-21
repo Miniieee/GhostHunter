@@ -135,7 +135,7 @@ public class PlayerPickup : NetworkBehaviour
     public void OnDropClientRpc()
     {
         if (IsOwner) return;
-        selectedEquipmentIndex--;
+        
         Destroy(pickedUpObject);
     }
 
