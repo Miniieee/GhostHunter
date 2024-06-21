@@ -5,7 +5,6 @@ using UnityEngine;
 public class HandEquipmentInventory : NetworkBehaviour
 {
     private PlayerControls playerControls;
-    //private List<GameObject> handEquipmentList = new List<GameObject>();
 
     private int selectedEquipmentIndex = 0;
     private int maxNumberOfEquipments = 3;
@@ -97,43 +96,6 @@ public class HandEquipmentInventory : NetworkBehaviour
         Debug.Log(selectedEquipmentIndex);
         return selectedEquipmentIndex;
     }
-
-
-    
-
-
-    /*public void AddHandEquipment(GameObject equipment)
-    {   
-        if (!isEquipmentToPickupAvaiable())
-        {
-            return;
-        }
-
-        foreach(Transform transforms in transform)
-        {
-            
-        }    
-
-        handEquipmentList.Add(equipment);
-        currentNumberOfEquipment++;
-    }
-
-    public bool isEquipmentToPickupAvaiable(){
-        return currentNumberOfEquipment < maxNumberOfEquipment;}
-
-    public void SetActiveHandEquipment(int index)
-    {
-        for (int i = 0; i < handEquipmentList.Count; i++)
-        {
-            handEquipmentList[i].SetActive(i == index);
-        }
-    }
-
-    public void RemoveHandEquipment(GameObject equipment)
-    {
-        handEquipmentList.Remove(equipment);
-        currentNumberOfEquipment--;
-    }*/
 
     private void OnEnable() {
         playerControls.Enable();
