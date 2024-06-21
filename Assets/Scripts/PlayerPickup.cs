@@ -116,7 +116,7 @@ public class PlayerPickup : NetworkBehaviour
         handEquipmentInventory.SelectEquipment(selectedEquipmentIndex);
     }
 
-    [ServerRpc]
+    [Rpc(SendTo.Server)]
     public void OnDropServerRpc()
     {
         pickedUpObject = handEquipmentInventory.ActiveHandEquipment();
@@ -125,17 +125,16 @@ public class PlayerPickup : NetworkBehaviour
 
         spawnedObject.GetComponent<NetworkObject>().Spawn();
         spawnedObject.GetComponent<Rigidbody>().AddForce(spawnedObject.transform.forward * 10f, ForceMode.Impulse);
-
-        Debug.Log("on the server drop " + selectedEquipmentIndex);
         
         OnDropClientRpc();
     }
 
-    [ClientRpc]
+    [Rpc(SendTo.ClientsAndHost)]
     public void OnDropClientRpc()
     {
         if (IsOwner) return;
-        
+
+        pickedUpObject = handEquipmentInventory.ActiveHandEquipment();
         Destroy(pickedUpObject);
     }
 
