@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8253932174081303940}
   - component: {fileID: 2302451612954595662}
   - component: {fileID: 3086159215953303855}
-  - component: {fileID: 3160973236960053565}
   - component: {fileID: 6787453937263616812}
   - component: {fileID: 2353800924873951473}
   - component: {fileID: 1041167931156320150}
@@ -108,18 +107,6 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &3160973236960053565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2464418532727536662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6787453937263616812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,9 +126,9 @@ MonoBehaviour:
   SyncRotAngleX: 1
   SyncRotAngleY: 1
   SyncRotAngleZ: 1
-  SyncScaleX: 1
-  SyncScaleY: 1
-  SyncScaleZ: 1
+  SyncScaleX: 0
+  SyncScaleY: 0
+  SyncScaleZ: 0
   PositionThreshold: 0.001
   RotAngleThreshold: 0.01
   ScaleThreshold: 0.01
