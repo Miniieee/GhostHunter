@@ -1,7 +1,6 @@
 using UnityEngine;
 using Unity.Netcode;
 using Unity.Cinemachine;
-using System.Collections.Generic;
 
 public class PlayerMovement : NetworkBehaviour
 {
@@ -9,7 +8,7 @@ public class PlayerMovement : NetworkBehaviour
     private Vector3 playerVelocity;
     private bool groundedPlayer;
 
-    [SerializeField] List<Vector3> playerSpawnPoints;
+    
     [SerializeField] private float playerSpeed = 2.0f;
     [SerializeField] private float sprintSpeed = 5.0f;
     [SerializeField] private float gravityValue = -9.81f;
@@ -35,10 +34,6 @@ public class PlayerMovement : NetworkBehaviour
         {
             cinemachineCamera.Priority = 0;
         }
-
-        transform.position = playerSpawnPoints[(int)OwnerClientId];
-        transform.rotation = Quaternion.identity;
-        Debug.Log("this client is spawned at: " + transform.position + " with id: " + (int)OwnerClientId);
     }
 
     private void Update()
