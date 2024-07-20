@@ -18,10 +18,16 @@ public class PlayerMovement : NetworkBehaviour
     private Transform cameraTransform;
     private AudioListener audioListener;
 
+    private Animator animator;
+
+    int moveXAnimationParameterId;
+    int moveYAnimationParameterId;
+
 
     private void Start() 
     {
         if (!IsOwner) return;
+        
         controller = gameObject.GetComponent<CharacterController>();
         inputManager = InputManager.Instance;
         cameraTransform = Camera.main.transform;
@@ -34,6 +40,13 @@ public class PlayerMovement : NetworkBehaviour
         {
             cinemachineCamera.Priority = 0;
         }
+
+
+        //Animations initialization
+        animator = GetComponent<Animator>();
+
+        moveXAnimationParameterId = Animator.StringToHash("MoveX");
+        moveYAnimationParameterId = Animator.StringToHash("MoveY");
     }
 
     private void Update()
@@ -66,6 +79,10 @@ public class PlayerMovement : NetworkBehaviour
 
         // Calculate the movement direction based on camera directions
         Vector3 moveDirection = cameraForward * input.y + cameraRight * input.x;
+
+        animator.SetFloat(moveXAnimationParameterId, input.x);
+        animator.SetFloat(moveYAnimationParameterId, input.y);
+
         moveDirection.Normalize();
 
         float currentSpeed = inputManager.GetSprint() ? sprintSpeed : playerSpeed;
