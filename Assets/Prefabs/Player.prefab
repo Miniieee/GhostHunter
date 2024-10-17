@@ -113,6 +113,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb99c672301bad47826a6e0f677c33a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkTransformExpanded: 0
+  AuthorityMode: 0
+  TickSyncChildren: 0
   UseUnreliableDeltas: 0
   SyncPositionX: 1
   SyncPositionY: 1
@@ -130,6 +134,7 @@ MonoBehaviour:
   UseQuaternionCompression: 0
   UseHalfFloatPrecision: 0
   InLocalSpace: 0
+  SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
 --- !u!1 &1579094249820689430
@@ -187,7 +192,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: eaeed236cd3cf5b4199787038439c018, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
@@ -210,6 +215,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 4272613250
   InScenePlacedSourceGlobalObjectIdHash: 2636098830
+  DeferredDespawnTick: 0
+  Ownership: 1
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -217,6 +224,8 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &2439844322286811287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,6 +238,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb99c672301bad47826a6e0f677c33a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkTransformExpanded: 0
+  AuthorityMode: 0
+  TickSyncChildren: 0
   UseUnreliableDeltas: 0
   SyncPositionX: 1
   SyncPositionY: 1
@@ -246,6 +259,7 @@ MonoBehaviour:
   UseQuaternionCompression: 0
   UseHalfFloatPrecision: 0
   InLocalSpace: 0
+  SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
 --- !u!143 &7625736144335287635
@@ -285,6 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b01cb51a261b00449e5ca72c4197efb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
 --- !u!114 &1216167471475609428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1066e31f4dc772448ade0c4001a796cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   playerSpeed: 5
   sprintSpeed: 7
   gravityValue: -9.81
@@ -313,6 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd84be84f8284574aab434d2c16a733b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   maxNumberOfEquipments: 3
   cameraTransform: {fileID: 1029834476231775742}
   objectGrabPointTransform: {fileID: 5806555793743000809}
@@ -332,6 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10172a0036f93b74383275fa39ddb24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   handEquipmentTransform: {fileID: 5806555793743000809}
 --- !u!1 &5688739757394674407
 GameObject:
@@ -386,7 +404,7 @@ MonoBehaviour:
     m_Value: 0
   OutputChannel: 1
   StandbyUpdate: 2
-  m_StreamingVersion: 20230301
+  m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
     TrackingTarget: {fileID: 367050148384528167}
@@ -438,6 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ReferenceFrame: 0
+  RecenterTarget: 0
   PanAxis:
     Value: 0
     Center: 0
@@ -547,6 +566,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb99c672301bad47826a6e0f677c33a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkTransformExpanded: 0
+  AuthorityMode: 0
+  TickSyncChildren: 0
   UseUnreliableDeltas: 0
   SyncPositionX: 1
   SyncPositionY: 1
@@ -564,6 +587,7 @@ MonoBehaviour:
   UseQuaternionCompression: 0
   UseHalfFloatPrecision: 0
   InLocalSpace: 0
+  SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
 --- !u!1001 &7562289309199680724
