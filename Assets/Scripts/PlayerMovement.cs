@@ -5,17 +5,20 @@ using Unity.Cinemachine;
 
 public class PlayerMovement : NetworkBehaviour
 {
-    private CharacterController controller;
-    private Vector3 playerVelocity;
-    private bool groundedPlayer;
-
-    
+    [Header("Player Movement Settings")]
     [SerializeField] private float playerSpeed = 2.0f;
     [SerializeField] private float sprintSpeed = 5.0f;
     [SerializeField] private float gravityValue = -9.81f;
+
+    [Header("Player Camera Settings")]
     [SerializeField] private CinemachineCamera cinemachineCamera;
 
+    [Header("Player Animation Settings")]
     [SerializeField] private float animationSmoothTime = 0.1f;
+
+    private CharacterController controller;
+    private Vector3 playerVelocity;
+    private bool groundedPlayer;
 
     private InputManager inputManager;
     private Transform cameraTransform;
@@ -46,7 +49,6 @@ public class PlayerMovement : NetworkBehaviour
         {
             cinemachineCamera.Priority = 0;
         }
-
 
         //Animations initialization
         animator = GetComponent<Animator>();
