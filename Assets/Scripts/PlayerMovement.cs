@@ -15,6 +15,8 @@ public class PlayerMovement : NetworkBehaviour
     [SerializeField] private float gravityValue = -9.81f;
     [SerializeField] private CinemachineCamera cinemachineCamera;
 
+    [SerializeField] private float animationSmoothTime = 0.1f;
+
     private InputManager inputManager;
     private Transform cameraTransform;
     private AudioListener audioListener;
@@ -24,6 +26,9 @@ public class PlayerMovement : NetworkBehaviour
     int moveXAnimationParameterId;
     int moveYAnimationParameterId;
 
+    private Vector2 currentAnimationBlendVector;
+    private Vector2 animationVelocity;
+    
 
     private void Start() 
     {
@@ -78,11 +83,13 @@ public class PlayerMovement : NetworkBehaviour
         cameraForward.Normalize();
         cameraRight.Normalize();
 
+        currentAnimationBlendVector = Vector2.SmoothDamp(currentAnimationBlendVector, input, ref animationVelocity, animationSmoothTime);
+        
         // Calculate the movement direction based on camera directions
         Vector3 moveDirection = cameraForward * input.y + cameraRight * input.x;
 
-        animator.SetFloat(moveXAnimationParameterId, input.x);
-        animator.SetFloat(moveYAnimationParameterId, input.y);
+        animator.SetFloat(moveXAnimationParameterId, currentAnimationBlendVector.x);
+        animator.SetFloat(moveYAnimationParameterId, currentAnimationBlendVector.y);
 
         moveDirection.Normalize();
 
