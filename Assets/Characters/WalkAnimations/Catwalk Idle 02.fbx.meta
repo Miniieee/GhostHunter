@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b5e64b16eedbd4f4c969024131b74c86
+guid: efc0cf910fd24af4698f1d18d298845e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -31,11 +31,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: WalkBackwards
+      name: Idle
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 28
+      lastFrame: 190
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
