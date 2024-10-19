@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1381345166503935839}
   - component: {fileID: 7139733550452716354}
   - component: {fileID: 4039783115727102926}
-  - component: {fileID: 473295544879370499}
+  - component: {fileID: 9157949413158397132}
   m_Layer: 6
   m_Name: PlayerVisual
   m_TagString: Untagged
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 1029834476231775742}
---- !u!114 &473295544879370499
+--- !u!114 &9157949413158397132
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -79,11 +79,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1161593136967510389}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cb99c672301bad47826a6e0f677c33a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  NetworkTransformExpanded: 0
+  NetworkTransformExpanded: 1
   AuthorityMode: 0
   TickSyncChildren: 0
   UseUnreliableDeltas: 0
@@ -185,13 +185,13 @@ GameObject:
   - component: {fileID: 3197217168691438022}
   - component: {fileID: 5817398659766355917}
   - component: {fileID: 865691587319460955}
+  - component: {fileID: 6115753893472178092}
   - component: {fileID: 2439844322286811287}
   - component: {fileID: 7625736144335287635}
   - component: {fileID: 7540841887075421705}
   - component: {fileID: 1216167471475609428}
   - component: {fileID: 7338919756040632807}
   - component: {fileID: 5179115991546748802}
-  - component: {fileID: 3535272464788861506}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -264,6 +264,21 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
+--- !u!114 &6115753893472178092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579094249820689430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec8cccf8c6ba9344b37eb37337771d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  TransitionStateInfoList: []
+  m_Animator: {fileID: 5817398659766355917}
 --- !u!114 &2439844322286811287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,7 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  NetworkTransformExpanded: 0
+  NetworkTransformExpanded: 1
   AuthorityMode: 0
   TickSyncChildren: 0
   UseUnreliableDeltas: 0
@@ -324,7 +339,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 0.85, z: 0}
+  m_Center: {x: 0, y: 0.98, z: 0}
 --- !u!114 &7540841887075421705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,10 +366,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  playerSpeed: 5
-  sprintSpeed: 7
+  playerSpeed: 1.8
+  sprintSpeed: 2.5
   gravityValue: -9.81
   cinemachineCamera: {fileID: 2928644724915465429}
+  animationSmoothTime: 0.1
 --- !u!114 &7338919756040632807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,21 +405,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   handEquipmentTransform: {fileID: 5806555793743000809}
---- !u!114 &3535272464788861506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579094249820689430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d0727d5ae3244e3b569694d3912374, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  TransitionStateInfoList: []
-  m_Animator: {fileID: 5817398659766355917}
 --- !u!1 &5688739757394674407
 GameObject:
   m_ObjectHideFlags: 0
