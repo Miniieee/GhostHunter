@@ -119,8 +119,8 @@ public class PlayerPickup : NetworkBehaviour
     public void OnDropServerRpc()
     {
         pickedUpObject = handEquipmentInventory.ActiveHandEquipment();
-        GameObject objecttospawn = pickedUpObject.GetComponent<ObjectGrabbable>().equipmentSO.equipmentNetworkPrefab;
-        spawnedObject = Instantiate(objecttospawn, objectGrabPointTransform.position, objectGrabPointTransform.rotation, objectGrabPointTransform);
+        GameObject objectToSpawn = pickedUpObject.GetComponent<ObjectGrabbable>().equipmentSO.equipmentNetworkPrefab;
+        spawnedObject = Instantiate(objectToSpawn, objectGrabPointTransform.position, objectGrabPointTransform.rotation, objectGrabPointTransform);
 
         spawnedObject.GetComponent<NetworkObject>().Spawn();
         spawnedObject.GetComponent<Rigidbody>().AddForce(spawnedObject.transform.forward * 10f, ForceMode.Impulse);
