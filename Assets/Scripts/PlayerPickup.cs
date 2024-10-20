@@ -47,7 +47,7 @@ public class PlayerPickup : NetworkBehaviour
                 NetworkObject pickedupNetworkObject = interactableObject.gameObject.GetComponent<NetworkObject>();
 
                 EquipmentSO pickedUpEquipmentSO = interactableObject.equipmentSO;
-                GameObject objectToPickup = pickedUpEquipmentSO.equipmentPrefab;
+                GameObject objectToPickup = pickedUpEquipmentSO.equipmentFirstPersonPrefab;
 
 
                 if (pickedUpEquipmentSO == null)
@@ -89,7 +89,7 @@ public class PlayerPickup : NetworkBehaviour
         PickedUpNetworkObjectReference.TryGet(out NetworkObject objectToSpawnNetworkObject);
 
         GameObject objectToSpawnGameObject = objectToSpawnNetworkObject.GetComponent<NetworkObject>().gameObject;
-        GameObject objectToSpawnPrefabSO = objectToSpawnGameObject.GetComponent<ObjectGrabbable>().equipmentSO.equipmentPrefab;
+        GameObject objectToSpawnPrefabSO = objectToSpawnGameObject.GetComponent<ObjectGrabbable>().equipmentSO.equipmentThirdPersonPrefab;
 
         SpawnPlaceholderObject(objectToSpawnPrefabSO);
         AddToHandInventory();

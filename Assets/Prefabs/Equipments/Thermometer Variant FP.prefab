@@ -10,11 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2464418532727536662, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
       propertyPath: m_Name
-      value: Thermometer Variant
+      value: Thermometer Variant FP
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464418532727536662, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3086159215953303855, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 3027937063
+      objectReference: {fileID: 0}
+    - target: {fileID: 5645700503180995099, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6542805776170818526, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -56,6 +64,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6787453937263616812, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
+      propertyPath: SyncRotAngleX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787453937263616812, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
+      propertyPath: SyncRotAngleY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787453937263616812, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
+      propertyPath: SyncRotAngleZ
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7953950809776270331, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents:
     - {fileID: 2353800924873951473, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
     - {fileID: 1041167931156320150, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
@@ -63,6 +87,8 @@ PrefabInstance:
     - {fileID: 3086159215953303855, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
     - {fileID: 2302451612954595662, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
     - {fileID: 8253932174081303940, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
+    - {fileID: -8690431387346420779, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
+    - {fileID: 6787453937263616812, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
