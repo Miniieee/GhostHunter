@@ -63,7 +63,6 @@ public class PlayerPickup : NetworkBehaviour
                 AddToHandInventory();
             }
         }
-
     }
 
     public void SpawnPlaceholderObject(GameObject _objectToPickup)
