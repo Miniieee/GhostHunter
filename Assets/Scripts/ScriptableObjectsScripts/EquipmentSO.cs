@@ -4,7 +4,8 @@ using UnityEngine;
 public class EquipmentSO : ScriptableObject
 {
     public GameObject equipmentNetworkPrefab;
-    public GameObject equipmentPrefab;
+    public GameObject equipmentThirdPersonPrefab;
+    public GameObject equipmentFirstPersonPrefab;
     public string equipmentName;
 
 }

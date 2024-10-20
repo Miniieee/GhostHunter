@@ -5,15 +5,20 @@ using Unity.Cinemachine;
 
 public class PlayerMovement : NetworkBehaviour
 {
-    private CharacterController controller;
-    private Vector3 playerVelocity;
-    private bool groundedPlayer;
-
-    
+    [Header("Player Movement Settings")]
     [SerializeField] private float playerSpeed = 2.0f;
     [SerializeField] private float sprintSpeed = 5.0f;
     [SerializeField] private float gravityValue = -9.81f;
+
+    [Header("Player Camera Settings")]
     [SerializeField] private CinemachineCamera cinemachineCamera;
+
+    [Header("Player Animation Settings")]
+    [SerializeField] private float animationSmoothTime = 0.1f;
+
+    private CharacterController controller;
+    private Vector3 playerVelocity;
+    private bool groundedPlayer;
 
     private InputManager inputManager;
     private Transform cameraTransform;
@@ -24,6 +29,9 @@ public class PlayerMovement : NetworkBehaviour
     int moveXAnimationParameterId;
     int moveYAnimationParameterId;
 
+    private Vector2 currentAnimationBlendVector;
+    private Vector2 animationVelocity;
+    
 
     private void Start() 
     {
@@ -41,7 +49,6 @@ public class PlayerMovement : NetworkBehaviour
         {
             cinemachineCamera.Priority = 0;
         }
-
 
         //Animations initialization
         animator = GetComponent<Animator>();
@@ -78,11 +85,13 @@ public class PlayerMovement : NetworkBehaviour
         cameraForward.Normalize();
         cameraRight.Normalize();
 
+        currentAnimationBlendVector = Vector2.SmoothDamp(currentAnimationBlendVector, input, ref animationVelocity, animationSmoothTime);
+        
         // Calculate the movement direction based on camera directions
         Vector3 moveDirection = cameraForward * input.y + cameraRight * input.x;
 
-        animator.SetFloat(moveXAnimationParameterId, input.x);
-        animator.SetFloat(moveYAnimationParameterId, input.y);
+        animator.SetFloat(moveXAnimationParameterId, currentAnimationBlendVector.x);
+        animator.SetFloat(moveYAnimationParameterId, currentAnimationBlendVector.y);
 
         moveDirection.Normalize();
 

@@ -48,13 +48,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1875495331120789689, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 3844891430800814353, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6166615857757903611, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 2050987038
       objectReference: {fileID: 0}
     - target: {fileID: 7866915758831821183, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
       propertyPath: m_Name
-      value: Flashlight Variant
+      value: Flashlight Variant FP
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866915758831821183, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6823734276336038596, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
@@ -63,6 +75,8 @@ PrefabInstance:
     - {fileID: 5984728635875634521, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
     - {fileID: 632742170766115235, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
     - {fileID: 6166615857757903611, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
+    - {fileID: 9205268447392039380, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
+    - {fileID: 3167749658329725056, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
