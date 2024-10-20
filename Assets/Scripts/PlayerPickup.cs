@@ -103,13 +103,12 @@ public class PlayerPickup : NetworkBehaviour
 
     private void OnDrop()
     {
-        if (!IsOwner) return;
-        
-        if(selectedEquipmentIndex == 0) { return; }
+        if (!IsOwner || selectedEquipmentIndex == 0) return;
 
         selectedEquipmentIndex--;
         
         pickedUpObject = handEquipmentInventory.ActiveHandEquipment();
+        if (pickedUpObject == null) return;
 
         OnDropServerRpc();
         Destroy(pickedUpObject);

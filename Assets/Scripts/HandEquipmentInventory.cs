@@ -65,7 +65,7 @@ public class HandEquipmentInventory : NetworkBehaviour
     {
         foreach (Transform equipment in handEquipmentTransform)
         {
-            if (equipment.gameObject.activeSelf == true)
+            if (equipment?.gameObject.activeSelf == true)
             {
                 return equipment.gameObject;
             }
