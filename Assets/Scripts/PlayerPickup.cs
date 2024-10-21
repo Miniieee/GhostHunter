@@ -63,7 +63,6 @@ public class PlayerPickup : NetworkBehaviour
                 AddToHandInventory();
             }
         }
-
     }
 
     public void SpawnPlaceholderObject(GameObject _objectToPickup)
@@ -103,13 +102,12 @@ public class PlayerPickup : NetworkBehaviour
 
     private void OnDrop()
     {
-        if (!IsOwner) return;
-        
-        if(selectedEquipmentIndex == 0) { return; }
+        if (!IsOwner || selectedEquipmentIndex < 0) return;
 
         selectedEquipmentIndex--;
         
         pickedUpObject = handEquipmentInventory.ActiveHandEquipment();
+        if (pickedUpObject == null) return;
 
         OnDropServerRpc();
         Destroy(pickedUpObject);
@@ -120,8 +118,8 @@ public class PlayerPickup : NetworkBehaviour
     public void OnDropServerRpc()
     {
         pickedUpObject = handEquipmentInventory.ActiveHandEquipment();
-        GameObject objecttospawn = pickedUpObject.GetComponent<ObjectGrabbable>().equipmentSO.equipmentNetworkPrefab;
-        spawnedObject = Instantiate(objecttospawn, objectGrabPointTransform.position, objectGrabPointTransform.rotation, objectGrabPointTransform);
+        GameObject objectToSpawn = pickedUpObject.GetComponent<ObjectGrabbable>().equipmentSO.equipmentNetworkPrefab;
+        spawnedObject = Instantiate(objectToSpawn, objectGrabPointTransform.position, objectGrabPointTransform.rotation, objectGrabPointTransform);
 
         spawnedObject.GetComponent<NetworkObject>().Spawn();
         spawnedObject.GetComponent<Rigidbody>().AddForce(spawnedObject.transform.forward * 10f, ForceMode.Impulse);
