@@ -102,7 +102,7 @@ public class PlayerPickup : NetworkBehaviour
 
     private void OnDrop()
     {
-        if (!IsOwner || selectedEquipmentIndex == 0) return;
+        if (!IsOwner || selectedEquipmentIndex < 0) return;
 
         selectedEquipmentIndex--;
         
