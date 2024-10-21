@@ -45,4 +45,16 @@ public class Player : NetworkBehaviour
             SetLayerRecursively(child.gameObject, newLayer);
         }
     }
+
+
+    /*TODO Refactoring and optimize
+        - Optimize rotation to the character look up and down, and animation to follow but only upper body
+        - research networkvariables
+        - modify non network equipmentPrefab to store both first and third person prefab
+
+     *TODO Animation rigging
+        - add a rig for character
+
+    */
+    
 }
