@@ -1,8 +1,10 @@
 using UnityEngine;
 using Unity.Netcode;
+using System.Collections.Generic;
 
 public class Player : NetworkBehaviour
 {
+    [SerializeField] List<Vector3> spawnpoints = new List<Vector3>();
     private CameraRotationFollower playerVisuals;
 
     private void Awake()
@@ -22,6 +24,13 @@ public class Player : NetworkBehaviour
             int layerNumber = LayerMask.NameToLayer("Player");
             SetLayerRecursively(playerVisuals.gameObject, layerNumber);
         }
+    }
+
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+
+        transform.position = spawnpoints[(int)OwnerClientId];
     }
 
 
