@@ -26,14 +26,6 @@ public class Player : NetworkBehaviour
         }
     }
 
-    public override void OnNetworkSpawn()
-    {
-        base.OnNetworkSpawn();
-
-        transform.position = spawnpoints[(int)OwnerClientId];
-    }
-
-
     private void SetLayerRecursively(GameObject obj, int newLayer)
     {
         if (obj == null)
