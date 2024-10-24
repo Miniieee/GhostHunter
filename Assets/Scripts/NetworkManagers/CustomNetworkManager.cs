@@ -5,24 +5,14 @@ using System;
 
 public class CustomNetworkManager : NetworkManager
 {
-    [SerializeField] private List<Vector3> spawnpoints = new List<Vector3>();
+    private SpawnPoints spawnPoints;
 
     private void Start()
     {   
-        spawnpoints.Clear();
-
-        Vector3 spawnPosition1 = new Vector3(0, 0, 0);
-        Vector3 spawnPosition2 = new Vector3(1, 0, 0);
-        Vector3 spawnPosition3 = new Vector3(2, 0, 0);
-        Vector3 spawnPosition4 = new Vector3(3, 0, 0);
-
-        spawnpoints.Add(spawnPosition1);
-        spawnpoints.Add(spawnPosition2);
-        spawnpoints.Add(spawnPosition3);
-        spawnpoints.Add(spawnPosition4);
-
         this.NetworkConfig.ConnectionApproval = true;
         this.NetworkConfig.ConnectionData = new byte[0];
+
+        spawnPoints = GetComponent<SpawnPoints>();
 
         NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
     }
@@ -40,9 +30,10 @@ public class CustomNetworkManager : NetworkManager
         response.Approved = true;
         response.CreatePlayerObject = true;
 
-        // Set the player's initial position based on their client ID
-        Vector3 spawnPosition = spawnpoints[(int)request.ClientNetworkId];
+        Vector3 spawnPosition = spawnPoints.GetSpawnPoint((int)request.ClientNetworkId);
         response.Position = spawnPosition;
+
+        Debug.Log("Player " + request.ClientNetworkId + " position is: " + spawnPosition);
         response.Rotation = Quaternion.identity;
     }
 }

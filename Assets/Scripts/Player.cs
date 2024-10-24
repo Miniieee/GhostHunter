@@ -26,6 +26,7 @@ public class Player : NetworkBehaviour
         }
     }
 
+
     private void SetLayerRecursively(GameObject obj, int newLayer)
     {
         if (obj == null)
