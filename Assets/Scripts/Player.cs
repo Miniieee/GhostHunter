@@ -23,6 +23,7 @@ public class Player : NetworkBehaviour
             int layerNumber = LayerMask.NameToLayer("Player");
             SetLayerRecursively(playerVisuals.gameObject, layerNumber);
         }
+
     }
 
 
