@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3086159215953303855}
   - component: {fileID: 6787453937263616812}
   - component: {fileID: 2353800924873951473}
-  - component: {fileID: 1041167931156320150}
   - component: {fileID: -8690431387346420779}
   m_Layer: 7
   m_Name: Thermometer Network
@@ -161,19 +160,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipmentSO: {fileID: 11400000, guid: 1800eec65f3d6be43962b12b46982496, type: 2}
---- !u!114 &1041167931156320150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2464418532727536662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1feb777b1db018a40a95658e56cb5595, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: {x: 0, y: 0, z: 0}
 --- !u!114 &-8690431387346420779
 MonoBehaviour:
   m_ObjectHideFlags: 0
