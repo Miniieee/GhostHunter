@@ -35,5 +35,6 @@ public class CustomNetworkManager : NetworkManager
 
         Debug.Log("Player " + request.ClientNetworkId + " position is: " + spawnPosition);
         response.Rotation = Quaternion.identity;
+        response.CreatePlayerObject = true;
     }
 }
