@@ -13,7 +13,8 @@ public class PlayerPickup : NetworkBehaviour
 
     [SerializeField] private int maxNumberOfEquipments = 3;
     [SerializeField] private Transform cameraTransform;
-    [SerializeField] private Transform objectGrabPointTransform;
+    [SerializeField] private Transform objectGrabPointFirstPersonTransform;
+    [SerializeField] private Transform objectGrabPointThirdPersonTransform;
     [SerializeField] private LayerMask pickupLayer;
     [SerializeField] private float pickupRange = 2f;
 
@@ -67,7 +68,14 @@ public class PlayerPickup : NetworkBehaviour
 
     public void SpawnPlaceholderObject(GameObject _objectToPickup)
     {
-        pickedUpObject = Instantiate(_objectToPickup, objectGrabPointTransform.position, objectGrabPointTransform.rotation, objectGrabPointTransform);
+        if (IsOwner)
+        {
+            pickedUpObject = Instantiate(_objectToPickup, objectGrabPointFirstPersonTransform.position, objectGrabPointFirstPersonTransform.rotation, objectGrabPointFirstPersonTransform);
+        }
+        else
+        {
+            pickedUpObject = Instantiate(_objectToPickup, objectGrabPointThirdPersonTransform.position, objectGrabPointThirdPersonTransform.rotation, objectGrabPointThirdPersonTransform);
+        }
     }
 
     [ServerRpc]
@@ -105,7 +113,7 @@ public class PlayerPickup : NetworkBehaviour
         if (!IsOwner || selectedEquipmentIndex < 0) return;
 
         selectedEquipmentIndex--;
-        
+
         pickedUpObject = handEquipmentInventory.ActiveHandEquipment();
         if (pickedUpObject == null) return;
 
@@ -119,11 +127,11 @@ public class PlayerPickup : NetworkBehaviour
     {
         pickedUpObject = handEquipmentInventory.ActiveHandEquipment();
         GameObject objectToSpawn = pickedUpObject.GetComponent<ObjectGrabbable>().equipmentSO.equipmentNetworkPrefab;
-        spawnedObject = Instantiate(objectToSpawn, objectGrabPointTransform.position, objectGrabPointTransform.rotation, objectGrabPointTransform);
+        spawnedObject = Instantiate(objectToSpawn, objectGrabPointFirstPersonTransform.position, objectGrabPointFirstPersonTransform.rotation, objectGrabPointFirstPersonTransform);
 
         spawnedObject.GetComponent<NetworkObject>().Spawn();
         spawnedObject.GetComponent<Rigidbody>().AddForce(spawnedObject.transform.forward * 10f, ForceMode.Impulse);
-        
+
         OnDropClientRpc();
     }
 
