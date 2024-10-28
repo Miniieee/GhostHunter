@@ -9,10 +9,12 @@ public class HandEquipmentInventory : NetworkBehaviour
     private int selectedEquipmentIndex = 0;
     private int maxNumberOfEquipments = 3;
     private int currentlySelectedEquipmentIndex;
+    private Transform handEquipmentTransform;
 
-    [SerializeField] private Transform handEquipmentTransform;
-    
-    
+    [SerializeField] private Transform handEquipmentFirstPersonTransform;
+    [SerializeField] private Transform handEquipmentThirdPersonTransform;
+
+
     public override void OnNetworkSpawn()
     {
         playerControls.Player.EquipmentSwich.performed += ctx => SelectEquipment(playerControls.Player.EquipmentSwich.ReadValue<float>());
@@ -29,13 +31,23 @@ public class HandEquipmentInventory : NetworkBehaviour
         playerControls = new PlayerControls();
     }
 
-    private void Start() {
+    private void Start()
+    {
         selectedEquipmentIndex = 0;
+
+        if (IsOwner)
+        {
+            handEquipmentTransform = handEquipmentFirstPersonTransform;
+        }
+        else
+        {
+            handEquipmentTransform = handEquipmentThirdPersonTransform;
+        }
     }
 
     public void SelectEquipment(float selectedEquipmentChangeDirectionValue)
     {
-        if(!IsOwner) { return; }
+        if (!IsOwner) { return; }
 
         if (handEquipmentTransform.childCount == 0) { return; }
         ActivateSelectedEquipment(selectedEquipmentChangeDirectionValue);
@@ -57,7 +69,7 @@ public class HandEquipmentInventory : NetworkBehaviour
     [Rpc(SendTo.Everyone)]
     public void ActivateSelectedEquipmentRpc(float selectedEquipmentChangeDirectionValue)
     {
-        if(IsOwner) { return; }
+        if (IsOwner) { return; }
         ActivateSelectedEquipment(selectedEquipmentChangeDirectionValue);
     }
 
@@ -84,11 +96,11 @@ public class HandEquipmentInventory : NetworkBehaviour
 
         maxNumberOfEquipments = handEquipmentTransform.childCount;
 
-        if(selectedEquipmentIndex >= maxNumberOfEquipments)
+        if (selectedEquipmentIndex >= maxNumberOfEquipments)
         {
             selectedEquipmentIndex = 0;
         }
-        else if(selectedEquipmentIndex < 0)
+        else if (selectedEquipmentIndex < 0)
         {
             selectedEquipmentIndex = maxNumberOfEquipments - 1;
         }
@@ -97,12 +109,14 @@ public class HandEquipmentInventory : NetworkBehaviour
         return selectedEquipmentIndex;
     }
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         playerControls.Enable();
 
     }
 
-    private void OnDisable() {
+    private void OnDisable()
+    {
         playerControls.Disable();
     }
 }

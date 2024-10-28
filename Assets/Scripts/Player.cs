@@ -1,9 +1,12 @@
 using UnityEngine;
 using Unity.Netcode;
-using System.Collections.Generic;
 
 public class Player : NetworkBehaviour
 {
+    [SerializeField] private Transform firstPersonTarget;
+    [SerializeField] private Transform thirdPersonTarget;
+    [SerializeField] private SetObjectPosition ref_EquipmentRig;
+
     private CameraRotationFollower playerVisuals;
 
     private void Awake()
@@ -17,11 +20,15 @@ public class Player : NetworkBehaviour
         {
             int layerNumber = LayerMask.NameToLayer("Hide");
             SetLayerRecursively(playerVisuals.gameObject, layerNumber);
+
+            ref_EquipmentRig.SetTargetPosition(firstPersonTarget);
         }
         else
         {
             int layerNumber = LayerMask.NameToLayer("Player");
             SetLayerRecursively(playerVisuals.gameObject, layerNumber);
+
+            ref_EquipmentRig.SetTargetPosition(thirdPersonTarget);
         }
 
     }

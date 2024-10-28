@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class SetObjectPosition : MonoBehaviour
 {
-    [SerializeField] Transform targetPosition;
+    private Transform targetPosition;
+
+    public void SetTargetPosition(Transform target)
+    {
+        targetPosition = target;
+    }
 
     void LateUpdate()
     {
