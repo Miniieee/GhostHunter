@@ -16,6 +16,10 @@ public class PlayerMovement : NetworkBehaviour
     [Header("Player Animation Settings")]
     [SerializeField] private float animationSmoothTime = 0.1f;
 
+    [Header("Animation Rig Settings")]
+    [SerializeField] private Transform aimTarget;
+    [SerializeField] private float aimDistance;
+
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
@@ -84,6 +88,8 @@ public class PlayerMovement : NetworkBehaviour
         cameraRight.y = 0f;
         cameraForward.Normalize();
         cameraRight.Normalize();
+
+        aimTarget.position = cinemachineCamera.transform.position + cinemachineCamera.transform.forward * aimDistance;
 
         currentAnimationBlendVector = Vector2.SmoothDamp(currentAnimationBlendVector, input, ref animationVelocity, animationSmoothTime);
         
