@@ -1,6 +1,7 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class FlashllightActivate : MonoBehaviour, IActivatable
+public class FlashllightActivate : NetworkBehaviour, IActivatable
 {
 
     private PlayerControls playerControls;
