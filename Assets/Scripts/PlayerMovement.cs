@@ -26,8 +26,6 @@ public class PlayerMovement : NetworkBehaviour
 
     private InputManager inputManager;
     private Transform cameraTransform;
-    private AudioListener audioListener;
-
     private Animator animator;
 
     int moveXAnimationParameterId;
