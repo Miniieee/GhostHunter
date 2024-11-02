@@ -25,7 +25,10 @@ public class PlayerEquipmentActivate : NetworkBehaviour
 
         if (currentEquipment == null) { return; }
 
-        currentEquipment.GetComponent<IActivatable>().Activate();
+        if (currentEquipment.TryGetComponent(out IActivatable activatable))
+        {
+            activatable.Activate();
+        }
 
         ActivateEquipmentRpc();
     }

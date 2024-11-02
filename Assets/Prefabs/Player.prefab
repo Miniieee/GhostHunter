@@ -578,6 +578,7 @@ GameObject:
   - component: {fileID: 7338919756040632807}
   - component: {fileID: 5179115991546748802}
   - component: {fileID: 3970927536793881601}
+  - component: {fileID: 6591499851779620476}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -811,6 +812,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
+--- !u!114 &6591499851779620476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579094249820689430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 202225df61c2b2c48bd5cf7898604577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashlight: {fileID: 6598377942383327541}
 --- !u!1 &1595745218568532756
 GameObject:
   m_ObjectHideFlags: 0
@@ -4115,7 +4129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 7c4cfd35d7e78fb44a0f5522e37c35b1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7c4cfd35d7e78fb44a0f5522e37c35b1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4165,5 +4179,10 @@ PrefabInstance:
 --- !u!4 &6598377942376851509 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 7c4cfd35d7e78fb44a0f5522e37c35b1, type: 3}
+  m_PrefabInstance: {fileID: 6598377942376723125}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &6598377942383327541 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 10800000, guid: 7c4cfd35d7e78fb44a0f5522e37c35b1, type: 3}
   m_PrefabInstance: {fileID: 6598377942376723125}
   m_PrefabAsset: {fileID: 0}

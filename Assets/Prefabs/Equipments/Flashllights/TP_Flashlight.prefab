@@ -60,7 +60,8 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 3279077174
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6085809972192652657, guid: 2deff8f2b0ed79348acdce252259de8b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -124,4 +125,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01104fbf78055524996b1915b87ba261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashlight: {fileID: 0}
