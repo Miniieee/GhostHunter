@@ -99,8 +99,8 @@ GameObject:
   - component: {fileID: 5984728635875634521}
   - component: {fileID: 6166615857757903611}
   - component: {fileID: 3167749658329725056}
-  - component: {fileID: 6823734276336038596}
   - component: {fileID: 9205268447392039380}
+  - component: {fileID: 6823734276336038596}
   m_Layer: 7
   m_Name: Flashlight Network
   m_TagString: Untagged
@@ -233,19 +233,6 @@ MonoBehaviour:
   SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &6823734276336038596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7866915758831821183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9633e3a2e8232324684ea0c58290fede, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  equipmentSO: {fileID: 11400000, guid: 1dcad2e01f3c70f4ea0d00fa1dd62b33, type: 2}
 --- !u!114 &9205268447392039380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,3 +250,16 @@ MonoBehaviour:
   UseRigidBodyForMotion: 0
   AutoUpdateKinematicState: 1
   AutoSetKinematicOnDespawn: 1
+--- !u!114 &6823734276336038596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7866915758831821183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9633e3a2e8232324684ea0c58290fede, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equipmentSO: {fileID: 11400000, guid: 1dcad2e01f3c70f4ea0d00fa1dd62b33, type: 2}
