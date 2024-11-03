@@ -20,7 +20,6 @@ public class Player : NetworkBehaviour
         {
             int layerNumber = LayerMask.NameToLayer("Hide");
             SetLayerRecursively(playerVisuals.gameObject, layerNumber);
-
             ref_EquipmentRig.SetTargetPosition(firstPersonTarget);
         }
         else
@@ -32,7 +31,6 @@ public class Player : NetworkBehaviour
         }
 
     }
-
 
     private void SetLayerRecursively(GameObject obj, int newLayer)
     {
@@ -56,14 +54,4 @@ public class Player : NetworkBehaviour
     }
 
 
-    /*TODO Refactoring and optimize
-        - Optimize rotation to the character look up and down, and animation to follow but only upper body
-        - research networkvariables
-        - modify non network equipmentPrefab to store both first and third person prefab
-
-     *TODO Animation rigging
-        - add a rig for character
-
-    */
-    
 }
