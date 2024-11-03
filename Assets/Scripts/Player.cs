@@ -20,7 +20,6 @@ public class Player : NetworkBehaviour
         {
             int layerNumber = LayerMask.NameToLayer("Hide");
             SetLayerRecursively(playerVisuals.gameObject, layerNumber);
-
             ref_EquipmentRig.SetTargetPosition(firstPersonTarget);
         }
         else
@@ -32,7 +31,6 @@ public class Player : NetworkBehaviour
         }
 
     }
-
 
     private void SetLayerRecursively(GameObject obj, int newLayer)
     {
@@ -54,4 +52,6 @@ public class Player : NetworkBehaviour
             SetLayerRecursively(child.gameObject, newLayer);
         }
     }
+
+
 }
