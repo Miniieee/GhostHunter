@@ -30,19 +30,47 @@ public class PlayerEquipmentActivate : NetworkBehaviour
             activatable.Activate();
         }
 
-        ActivateEquipmentRpc();
+        ActivateEquipmentRpc(NetworkObjectId);
     }
 
     [Rpc(SendTo.Everyone)]
-    private void ActivateEquipmentRpc()
+    private void ActivateEquipmentRpc(ulong playerNetworkObjectId)
     {
-        if (IsOwner) { return; }
+        if (IsOwner && NetworkObjectId == playerNetworkObjectId) { return; }
 
-        GameObject currentEquipment = handEquipmentInventory.ActiveHandEquipment();
+        if (NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(playerNetworkObjectId, out NetworkObject playerNetObj))
+        {
+            GameObject playerObject = playerNetObj.gameObject;
 
-        if (currentEquipment == null) { return; }
+            HandEquipmentInventory handEquipmentInventory = playerObject.GetComponent<HandEquipmentInventory>();
 
-        currentEquipment.GetComponent<IActivatable>().Activate();
+            if (handEquipmentInventory == null)
+            {
+                Debug.LogError("Player does not have HandEquipmentInventory component.");
+                return;
+            }
+
+            GameObject currentEquipment = handEquipmentInventory.ActiveHandEquipment();
+
+            if (currentEquipment == null)
+            {
+                Debug.LogError("Player does not have active equipment.");
+                return;
+            }
+
+            if (currentEquipment.TryGetComponent<IActivatable>(out var activatable))
+            {
+                activatable.Activate();
+            }
+            else
+            {
+                Debug.LogError("Equipment does not implement IActivatable interface.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Could not find player with NetworkObjectId: " + playerNetworkObjectId);
+        }
     }
 
     private void OnEnable()
