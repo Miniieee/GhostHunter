@@ -3,6 +3,7 @@ using UnityEngine;
 public class FlashlightToggle : MonoBehaviour
 {
     [SerializeField] private Light flashlight;
+
     private FlashlightActivate flashlightActivate;
 
     void Start()
