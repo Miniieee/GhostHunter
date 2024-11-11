@@ -3,7 +3,7 @@ using UnityEngine;
 public class FlashlightToggle : MonoBehaviour
 {
     [SerializeField] private Light flashlight;
-    private FlashlightActivate flashlightActivate;
+    [SerializeField] private FlashlightEventSO flashlightActivate;
 
     void Start()
     {
@@ -12,8 +12,7 @@ public class FlashlightToggle : MonoBehaviour
 
     public void GetFlashlightReference()
     {
-        flashlightActivate = GetComponentInChildren<FlashlightActivate>();
-        flashlightActivate.OnActivated += ToggleFlashlight;
+        flashlightActivate.OnFlashlightEvent += ToggleFlashlight;
     }
 
     private void ToggleFlashlight()
@@ -24,6 +23,6 @@ public class FlashlightToggle : MonoBehaviour
     public void OnDestroy()
     {
         if (flashlightActivate == null) return;
-        flashlightActivate.OnActivated -= ToggleFlashlight;
+        flashlightActivate.OnFlashlightEvent -= ToggleFlashlight;
     }
 }
