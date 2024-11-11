@@ -825,6 +825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashlight: {fileID: 6598377942383327541}
+  flashlightActivate: {fileID: 11400000, guid: 6a265f8eee9a79844999b8a6d1e57a26, type: 2}
 --- !u!1 &1595745218568532756
 GameObject:
   m_ObjectHideFlags: 0
