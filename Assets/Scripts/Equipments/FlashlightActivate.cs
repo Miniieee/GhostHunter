@@ -6,7 +6,7 @@ public class FlashlightActivate : MonoBehaviour, IActivatable
 
     public void Activate(ulong networkObjectId)
     {
-        flashlightEvent.ToggleFlashlight();
+        flashlightEvent.ToggleFlashlight(networkObjectId);
     }
 
 }
