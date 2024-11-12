@@ -4,10 +4,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "FlashlightEventSO", menuName = "EventBuses/FlashlightEventSO")]
 public class FlashlightEventSO : ScriptableObject
 {
-    public event Action OnFlashlightEvent;
+    public event EventHandler OnFlashlightEvent;
 
     public void ToggleFlashlight()
     {
-        OnFlashlightEvent?.Invoke();
+        OnFlashlightEvent?.Invoke(this, EventArgs.Empty);
     }
 }

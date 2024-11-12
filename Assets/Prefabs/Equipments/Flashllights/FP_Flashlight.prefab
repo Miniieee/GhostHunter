@@ -86,4 +86,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01104fbf78055524996b1915b87ba261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashlight: {fileID: 0}
+  flashlightEvent: {fileID: 11400000, guid: 6a265f8eee9a79844999b8a6d1e57a26, type: 2}

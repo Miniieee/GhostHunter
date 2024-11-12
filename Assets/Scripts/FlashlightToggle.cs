@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class FlashlightToggle : MonoBehaviour
@@ -8,14 +9,10 @@ public class FlashlightToggle : MonoBehaviour
     void Start()
     {
         flashlight.enabled = false;
-    }
-
-    public void GetFlashlightReference()
-    {
         flashlightActivate.OnFlashlightEvent += ToggleFlashlight;
     }
 
-    private void ToggleFlashlight()
+    private void ToggleFlashlight(object sender, EventArgs e)
     {
         flashlight.enabled = !flashlight.enabled;
     }
