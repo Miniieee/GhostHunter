@@ -27,7 +27,7 @@ public class PlayerEquipmentActivate : NetworkBehaviour
 
         if (currentEquipment.TryGetComponent(out IActivatable activatable))
         {
-            activatable.Activate();
+            activatable.Activate(NetworkObjectId);
         }
 
         ActivateEquipmentRpc(NetworkObjectId);
@@ -60,7 +60,7 @@ public class PlayerEquipmentActivate : NetworkBehaviour
 
             if (currentEquipment.TryGetComponent<IActivatable>(out var activatable))
             {
-                activatable.Activate();
+                activatable.Activate(playerNetworkObjectId);
             }
             else
             {

@@ -1,6 +1,8 @@
+using System;
+using Unity.Netcode;
 using UnityEngine;
 
-public class FlashlightToggle : MonoBehaviour
+public class FlashlightToggle : NetworkBehaviour
 {
     [SerializeField] private Light flashlight;
     [SerializeField] private FlashlightEventSO flashlightActivate;
@@ -8,21 +10,22 @@ public class FlashlightToggle : MonoBehaviour
     void Start()
     {
         flashlight.enabled = false;
-    }
-
-    public void GetFlashlightReference()
-    {
         flashlightActivate.OnFlashlightEvent += ToggleFlashlight;
     }
 
-    private void ToggleFlashlight()
+    private void ToggleFlashlight(ulong networkID)
     {
+        if (NetworkObjectId != networkID) { return; }
         flashlight.enabled = !flashlight.enabled;
     }
 
-    public void OnDestroy()
+    public override void OnDestroy()
     {
-        if (flashlightActivate == null) return;
+        flashlightActivate.OnFlashlightEvent -= ToggleFlashlight;
+    }
+
+    private void OnDisable()
+    {
         flashlightActivate.OnFlashlightEvent -= ToggleFlashlight;
     }
 }
