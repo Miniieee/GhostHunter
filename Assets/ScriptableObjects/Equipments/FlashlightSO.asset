@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b01a2da880851540bd637df8348f7ca, type: 3}
   m_Name: FlashlightSO
   m_EditorClassIdentifier: 
-  equipmentNetworkPrefab: {fileID: 100000, guid: b694b8ec5c41f6247843a2b67222fda6, type: 3}
-  equipmentThirdPersonPrefab: {fileID: 8016634973653584540, guid: b4fd1d2d39284314ea6e1078d099c264, type: 3}
-  equipmentFirstPersonPrefab: {fileID: 206473347199327961, guid: 2deff8f2b0ed79348acdce252259de8b, type: 3}
+  equipmentNetworkPrefab: {fileID: 7866915758831821183, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
+  equipmentThirdPersonPrefab: {fileID: 8621085789441284983, guid: ea451218566a4bd43affa61c567d31f8, type: 3}
+  equipmentFirstPersonPrefab: {fileID: 8621085789441284983, guid: 836a520b28c038047b74cea717c4018c, type: 3}
   equipmentName: Flashlight
