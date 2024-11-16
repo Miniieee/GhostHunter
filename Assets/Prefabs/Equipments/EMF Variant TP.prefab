@@ -56,6 +56,50 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 3727140774
       objectReference: {fileID: 0}
+    - target: {fileID: 1758673114573334024, guid: 34f8efa13b8a9d24ea46272d4017c235, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.042
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758673114573334024, guid: 34f8efa13b8a9d24ea46272d4017c235, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758673114573334024, guid: 34f8efa13b8a9d24ea46272d4017c235, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.049
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758673114573334024, guid: 34f8efa13b8a9d24ea46272d4017c235, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.033340745
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758673114573334024, guid: 34f8efa13b8a9d24ea46272d4017c235, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.025931515
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758673114573334024, guid: 34f8efa13b8a9d24ea46272d4017c235, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.972175
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758673114573334024, guid: 34f8efa13b8a9d24ea46272d4017c235, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.23041645
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758673114573334024, guid: 34f8efa13b8a9d24ea46272d4017c235, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 26.505
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758673114573334024, guid: 34f8efa13b8a9d24ea46272d4017c235, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 175.078
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758673114573334024, guid: 34f8efa13b8a9d24ea46272d4017c235, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -4.216
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758673114573334024, guid: 34f8efa13b8a9d24ea46272d4017c235, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8606766432525677704, guid: 34f8efa13b8a9d24ea46272d4017c235, type: 3}
       propertyPath: m_Name
       value: EMF Variant TP
