@@ -53,16 +53,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 3462311145038962079, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462311145038962079, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462311145038962079, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462311145038962079, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.058
+      value: -0.052
       objectReference: {fileID: 0}
     - target: {fileID: 3462311145038962079, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.033
+      value: -0.044
       objectReference: {fileID: 0}
     - target: {fileID: 3462311145038962079, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.039
+      value: -0.121
       objectReference: {fileID: 0}
     - target: {fileID: 3462311145038962079, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -94,7 +106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3462311145038962079, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3844891430800814353, guid: 4b1d488966b23b44f9ef5ac53f677b8e, type: 3}
       propertyPath: m_Layer
@@ -143,7 +155,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8621085789441284983}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9633e3a2e8232324684ea0c58290fede, type: 3}
   m_Name: 
