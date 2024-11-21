@@ -89,11 +89,11 @@ public class PlayerPickup : NetworkBehaviour
     }
 
     [ClientRpc]
-    public void SpawnPlaceholderObjectClientRpc(NetworkObjectReference PickedUpNetworkObjectReference)
+    public void SpawnPlaceholderObjectClientRpc(NetworkObjectReference pickedUpNetworkObjectReference)
     {
         if (IsOwner) return;
 
-        PickedUpNetworkObjectReference.TryGet(out NetworkObject objectToSpawnNetworkObject);
+        pickedUpNetworkObjectReference.TryGet(out NetworkObject objectToSpawnNetworkObject);
 
         GameObject objectToSpawnGameObject = objectToSpawnNetworkObject.GetComponent<NetworkObject>().gameObject;
         GameObject objectToSpawnPrefabSO = objectToSpawnGameObject.GetComponent<ObjectGrabbable>().equipmentSO.equipmentThirdPersonPrefab;
