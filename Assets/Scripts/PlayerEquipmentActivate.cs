@@ -8,7 +8,7 @@ public class PlayerEquipmentActivate : NetworkBehaviour
 
     private void Awake()
     {
-        playerControls = new PlayerControls();
+        playerControls = new();
         handEquipmentInventory = GetComponent<HandEquipmentInventory>();
     }
 
