@@ -9,9 +9,9 @@ public class EquipmentNetworkSpawner : NetworkBehaviour
     private List<EquipmentSO> equipmentSOs = new List<EquipmentSO>();
     public override void OnNetworkSpawn()
     {
-        for (int i = 0; i < equipmentList.equipmentSOList.Count; i++)
+        foreach (var equipmentSo in equipmentList.equipmentSOList)
         {
-            equipmentSOs.Add(equipmentList.equipmentSOList[i]);
+            equipmentSOs.Add(equipmentSo);
         }
 
         if (!IsServer) return;

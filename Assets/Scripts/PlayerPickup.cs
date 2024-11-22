@@ -9,7 +9,7 @@ public class PlayerPickup : NetworkBehaviour
     private int selectedEquipmentIndex;
 
     private GameObject pickedUpObject;
-    GameObject spawnedObject;
+    private GameObject spawnedObject;
 
     [SerializeField] private int maxNumberOfEquipments = 3;
     [SerializeField] private Transform cameraTransform;
@@ -66,15 +66,15 @@ public class PlayerPickup : NetworkBehaviour
         }
     }
 
-    public void SpawnPlaceholderObject(GameObject _objectToPickup)
+    private void SpawnPlaceholderObject(GameObject objectToPickup)
     {
         if (IsOwner)
         {
-            pickedUpObject = Instantiate(_objectToPickup, objectGrabPointFirstPersonTransform.position, objectGrabPointFirstPersonTransform.rotation, objectGrabPointFirstPersonTransform);
+            pickedUpObject = Instantiate(objectToPickup, objectGrabPointFirstPersonTransform.position, objectGrabPointFirstPersonTransform.rotation, objectGrabPointFirstPersonTransform);
         }
         else
         {
-            pickedUpObject = Instantiate(_objectToPickup, objectGrabPointThirdPersonTransform.position, objectGrabPointThirdPersonTransform.rotation, objectGrabPointThirdPersonTransform);
+            pickedUpObject = Instantiate(objectToPickup, objectGrabPointThirdPersonTransform.position, objectGrabPointThirdPersonTransform.rotation, objectGrabPointThirdPersonTransform);
         }
     }
 
