@@ -9,7 +9,7 @@ public class SetObjectPosition : MonoBehaviour
         targetPosition = target;
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
         this.gameObject.transform.position = targetPosition.position;
     }

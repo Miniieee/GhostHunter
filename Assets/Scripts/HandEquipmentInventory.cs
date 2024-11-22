@@ -89,9 +89,8 @@ public class HandEquipmentInventory : NetworkBehaviour
     private int GetSelectedEquipmentIndex(float selectedEquipmentChangeDirectionValue)
     {
         //round float to integer and then show change direction so the float value doesn't matter 
-        int equipmentIndexChange = Mathf.RoundToInt(Mathf.Sign(selectedEquipmentChangeDirectionValue));
-
-
+        int equipmentIndexChange = Mathf.RoundToInt(f: Mathf.Sign(f: selectedEquipmentChangeDirectionValue));
+        
         selectedEquipmentIndex += equipmentIndexChange;
 
         maxNumberOfEquipments = handEquipmentTransform.childCount;
@@ -105,7 +104,7 @@ public class HandEquipmentInventory : NetworkBehaviour
             selectedEquipmentIndex = maxNumberOfEquipments - 1;
         }
 
-        Debug.Log(selectedEquipmentIndex);
+        Debug.Log(message: selectedEquipmentIndex);
         return selectedEquipmentIndex;
     }
 

@@ -28,8 +28,8 @@ public class PlayerMovement : NetworkBehaviour
     private Transform cameraTransform;
     private Animator animator;
 
-    int moveXAnimationParameterId;
-    int moveYAnimationParameterId;
+    private int moveXAnimationParameterId;
+    private int moveYAnimationParameterId;
 
     private Vector2 currentAnimationBlendVector;
     private Vector2 animationVelocity;
@@ -41,7 +41,7 @@ public class PlayerMovement : NetworkBehaviour
         
         controller = gameObject.GetComponent<CharacterController>();
         inputManager = InputManager.Instance;
-        cameraTransform = Camera.main.transform;
+        if (Camera.main != null) cameraTransform = Camera.main.transform;
 
         if (IsLocalPlayer)
         {
@@ -102,7 +102,7 @@ public class PlayerMovement : NetworkBehaviour
         float currentSpeed = inputManager.GetSprint() ? sprintSpeed : playerSpeed;
 
         // Move the player
-        controller.Move(moveDirection * currentSpeed * Time.deltaTime);
+        controller.Move(moveDirection * (currentSpeed * Time.deltaTime));
 
         // Apply gravity
         playerVelocity.y += gravityValue * Time.deltaTime;
