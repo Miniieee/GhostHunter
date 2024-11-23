@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/PrototypeAssets/StarterAssets/FirstPersonController/Scenes/Playground.unity
     guid: 707acc8dffb72b144bb1ffbe1c965f3d
+  - enabled: 1
+    path: Assets/Scenes/FarmHouse.unity
+    guid: a8d153126e68d7941ab767578ed2c276
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
