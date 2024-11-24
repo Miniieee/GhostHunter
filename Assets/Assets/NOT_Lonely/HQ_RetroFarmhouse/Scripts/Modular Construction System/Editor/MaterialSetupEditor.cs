@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Sirenix.OdinInspector.Editor;
 using UnityEditor;
 
 namespace NOTLonely_MCS
 {
     [CustomEditor(typeof(MaterialSetup))]
-    public class MaterialSetupEditor : Editor
+    public class MaterialSetupEditor : OdinEditor
     {
         MtlEditor editor;
 

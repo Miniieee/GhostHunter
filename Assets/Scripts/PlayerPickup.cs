@@ -12,13 +12,11 @@ public class PlayerPickup : NetworkBehaviour
     private GameObject pickedUpObject;
     private GameObject spawnedObject;
 
-    [Title("Scene objects only")]
-    [SceneObjectsOnly]
+    [Title("Intrenal transform references")]
     [SerializeField] private Transform cameraTransform;
-    [SceneObjectsOnly]
     [SerializeField] private Transform objectGrabPointFirstPersonTransform;
-    [SceneObjectsOnly]
     [SerializeField] private Transform objectGrabPointThirdPersonTransform;
+    
     [Title("Settings")]
     [SerializeField] private LayerMask pickupLayer;
     [SerializeField] private int maxNumberOfEquipments = 3;

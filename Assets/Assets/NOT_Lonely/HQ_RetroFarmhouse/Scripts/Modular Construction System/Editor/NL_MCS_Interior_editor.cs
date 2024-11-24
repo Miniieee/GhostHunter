@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector.Editor;
 using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(NOTLonely_MCS.NL_MCS_Interior))]
-public class NL_MCS_Interior_editor : Editor {
+public class NL_MCS_Interior_editor : OdinEditor {
 
     private NOTLonely_MCS.NL_MCS_Interior script;
     private NOTLonely_MCS.MtlEditor MtlEditor;

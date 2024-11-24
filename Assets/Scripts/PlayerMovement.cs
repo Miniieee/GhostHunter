@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Unity.Netcode;
 using Unity.Cinemachine;
@@ -5,18 +6,18 @@ using Unity.Cinemachine;
 
 public class PlayerMovement : NetworkBehaviour
 {
-    [Header("Player Movement Settings")]
+    [Title("Player Movement Settings")]
     [SerializeField] private float playerSpeed = 2.0f;
     [SerializeField] private float sprintSpeed = 5.0f;
     [SerializeField] private float gravityValue = -9.81f;
 
-    [Header("Player Camera Settings")]
+    [Title("Player Camera Settings")]
     [SerializeField] private CinemachineCamera cinemachineCamera;
 
-    [Header("Player Animation Settings")]
+    [Title("Player Animation Settings")]
     [SerializeField] private float animationSmoothTime = 0.1f;
 
-    [Header("Animation Rig Settings")]
+    [Title("Animation Rig Settings")]
     [SerializeField] private Transform aimTarget;
     [SerializeField] private float aimDistance;
 

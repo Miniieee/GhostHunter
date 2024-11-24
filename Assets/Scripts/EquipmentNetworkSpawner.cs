@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using Unity.Netcode;
 using UnityEngine;
 
 public class EquipmentNetworkSpawner : NetworkBehaviour
 {
+    [Title("Scene objects only")]
     [SerializeField] private EquipmentListSO equipmentList;
     [SerializeField] private List<Transform> equipmentListTransform;
     private List<EquipmentSO> equipmentSOs = new List<EquipmentSO>();
