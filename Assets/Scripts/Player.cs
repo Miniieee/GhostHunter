@@ -1,10 +1,15 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Unity.Netcode;
 
 public class Player : NetworkBehaviour
 {
+    [Title("Internal objects only")]
+    [SceneObjectsOnly]
     [SerializeField] private Transform firstPersonTarget;
+    [SceneObjectsOnly]
     [SerializeField] private Transform thirdPersonTarget;
+    [SceneObjectsOnly]
     [SerializeField] private SetObjectPosition refEquipmentRig;
 
     private CameraRotationFollower playerVisuals;

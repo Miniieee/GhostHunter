@@ -1,4 +1,5 @@
 
+using Sirenix.OdinInspector;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -11,11 +12,16 @@ public class PlayerPickup : NetworkBehaviour
     private GameObject pickedUpObject;
     private GameObject spawnedObject;
 
-    [SerializeField] private int maxNumberOfEquipments = 3;
+    [Title("Scene objects only")]
+    [SceneObjectsOnly]
     [SerializeField] private Transform cameraTransform;
+    [SceneObjectsOnly]
     [SerializeField] private Transform objectGrabPointFirstPersonTransform;
+    [SceneObjectsOnly]
     [SerializeField] private Transform objectGrabPointThirdPersonTransform;
+    [Title("Settings")]
     [SerializeField] private LayerMask pickupLayer;
+    [SerializeField] private int maxNumberOfEquipments = 3;
     [SerializeField] private float pickupRange = 2f;
 
 
