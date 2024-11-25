@@ -1658,7 +1658,6 @@ GameObject:
   - component: {fileID: 649396369}
   - component: {fileID: 649396367}
   - component: {fileID: 649396368}
-  - component: {fileID: 649396370}
   m_Layer: 7
   m_Name: EquipmentSpawner
   m_TagString: Untagged
@@ -1733,23 +1732,6 @@ Transform:
   - {fileID: 902141916}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &649396370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 649396366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73609bba158f1014aac7bcf038d5f832, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  myInt: 0
-  myFloat: 0
-  myString: 
-  myBool: 0
 --- !u!4 &656123106 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8642225304373351647, guid: 50a0925b0c22af146a2d15615f815a1c, type: 3}

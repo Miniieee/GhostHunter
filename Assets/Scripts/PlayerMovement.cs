@@ -6,10 +6,11 @@ using Unity.Cinemachine;
 
 public class PlayerMovement : NetworkBehaviour
 {
+    private const float GravityValue = -9.81f;
+    
     [Title("Player Movement Settings")]
     [SerializeField] private float playerSpeed = 2.0f;
     [SerializeField] private float sprintSpeed = 5.0f;
-    [SerializeField] private float gravityValue = -9.81f;
 
     [Title("Player Camera Settings")]
     [SerializeField] private CinemachineCamera cinemachineCamera;
@@ -35,7 +36,6 @@ public class PlayerMovement : NetworkBehaviour
     private Vector2 currentAnimationBlendVector;
     private Vector2 animationVelocity;
     
-
     private void Start() 
     {
         if (!IsOwner) return;
@@ -106,7 +106,7 @@ public class PlayerMovement : NetworkBehaviour
         controller.Move(moveDirection * (currentSpeed * Time.deltaTime));
 
         // Apply gravity
-        playerVelocity.y += gravityValue * Time.deltaTime;
+        playerVelocity.y += GravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
     }
 

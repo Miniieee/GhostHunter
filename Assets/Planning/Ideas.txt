@@ -1,0 +1,58 @@
+//TODO
+	- Add equipments
+		- Add models
+		- Add to FP, TP and network objects
+		- Rework colliders
+		- Set rotations individually
+		- Add activation script with IActivatable interface
+	
+	- Equipments to add with activations
+		- Flashlight
+			- Turn on and off
+		- EMF Reader
+			- shows emf levels in area (raycasts."half"sphere)
+		- Thermometer
+			- shows temperature (raycasts)
+		- Motion sensor
+			- mountable on walls
+		- Crucifix
+			- placeable on floor
+		- Smudge
+			- usable in hand, burns and hides player from ghost
+		- Spirit box
+			- activation in sphere, 
+		- Microphones
+			- for finding ghost, cone like shape detection
+		- Diary
+			- for ghost writing
+		- Photo camera
+			- taking photoes for extra exp
+		- Camera
+			- show screen at hideout
+		
+		Weapons
+			- Trapping summoning circle
+				- Ghost walks in and checking the diary if it's type has been successfully investigated or guessed, if so game over, if not releases the ghost after a few seconds
+	
+	- UI
+		- Notes UI
+			- get a design
+			- Panels
+				- Ghost descriptions
+				- Selection list
+				- settings and exit
+				- selection list might should be like a line chart of possibble actions
+		
+		- Menu UI
+			- Start Game
+				- Lobby
+					- Characters, names etc
+					- Equipment selector
+					- Map selection
+			- Options
+			- Exit
+	
+	Map design
+		- Finish Downstairs layout
+		- 
+				
