@@ -5,7 +5,6 @@ public class InputManager : MonoBehaviour
     private PlayerControls playerControls;
     private static InputManager instance;
 
-
     public static InputManager Instance
     {
         get
@@ -32,7 +31,6 @@ public class InputManager : MonoBehaviour
     public Vector2 GetPlayerMovement()
     {
         return playerControls.Player.Move.ReadValue<Vector2>();
-
     }
 
     public Vector2 GetMouseDelta()

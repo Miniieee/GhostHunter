@@ -638,7 +638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 4272613250
+  GlobalObjectIdHash: 2636098830
   InScenePlacedSourceGlobalObjectIdHash: 2636098830
   DeferredDespawnTick: 0
   Ownership: 1
@@ -742,7 +742,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   firstPersonTarget: {fileID: 5806555793743000809}
   thirdPersonTarget: {fileID: 501311632308547068}
-  ref_EquipmentRig: {fileID: 523130625934362451}
+  refEquipmentRig: {fileID: 523130625934362451}
 --- !u!114 &1216167471475609428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -776,13 +776,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  maxNumberOfEquipments: 3
   cameraTransform: {fileID: 1029834476231775742}
   objectGrabPointFirstPersonTransform: {fileID: 5806555793743000809}
   objectGrabPointThirdPersonTransform: {fileID: 501311632308547068}
   pickupLayer:
     serializedVersion: 2
     m_Bits: 183
+  maxNumberOfEquipments: 3
   pickupRange: 2
 --- !u!114 &5179115991546748802
 MonoBehaviour:

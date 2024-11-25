@@ -1,10 +1,14 @@
 using System;
+using Sirenix.OdinInspector;
 using Unity.Netcode;
 using UnityEngine;
 
 public class FlashlightToggle : NetworkBehaviour
 {
+    [Title("Spotlight reference")]
     [SerializeField] private Light flashlight;
+    
+    [Title("Event Bus")]
     [SerializeField] private FlashlightEventSO flashlightActivate;
 
     void Start()

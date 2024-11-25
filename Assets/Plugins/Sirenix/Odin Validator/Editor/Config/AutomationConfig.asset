@@ -28,10 +28,10 @@ MonoBehaviour:
   OnBuildSetup:
     Profile: 0
     ProfileAsset: {fileID: 11400000, guid: 496510960d39fb6479230e1507838784, type: 2}
-  OnProjectStartup: 0
+  OnProjectStartup: 1
   OnProjectStartupIfWarnings: 0
   OnProjectStartupIfErrors: 1
-  OnProjectStartupAlwaysCompleteValidationFully: 1
+  OnProjectStartupAlwaysCompleteValidationFully: 0
   OnProjectStartupFlashScreen: 0
   OnProjectStartupSetup:
     Profile: 0

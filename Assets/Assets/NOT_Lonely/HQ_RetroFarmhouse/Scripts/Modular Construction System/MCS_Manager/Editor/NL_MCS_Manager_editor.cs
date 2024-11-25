@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using NOTLonely_MCS;
+using Sirenix.OdinInspector.Editor;
 
 [CustomEditor(typeof(NL_MCS_Manager))]
-public class NL_MCS_Manager_editor : Editor
+public class NL_MCS_Manager_editor : OdinEditor
 {
     private NL_MCS_Manager manager;
 

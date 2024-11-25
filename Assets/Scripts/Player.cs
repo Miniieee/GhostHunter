@@ -1,8 +1,10 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Unity.Netcode;
 
 public class Player : NetworkBehaviour
 {
+    [Title("Internal objects only")]
     [SerializeField] private Transform firstPersonTarget;
     [SerializeField] private Transform thirdPersonTarget;
     [SerializeField] private SetObjectPosition refEquipmentRig;

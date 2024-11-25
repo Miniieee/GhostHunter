@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 using Unity.Netcode;
 using Unity.Cinemachine;
@@ -5,18 +6,19 @@ using Unity.Cinemachine;
 
 public class PlayerMovement : NetworkBehaviour
 {
-    [Header("Player Movement Settings")]
+    private const float GravityValue = -9.81f;
+    
+    [Title("Player Movement Settings")]
     [SerializeField] private float playerSpeed = 2.0f;
     [SerializeField] private float sprintSpeed = 5.0f;
-    [SerializeField] private float gravityValue = -9.81f;
 
-    [Header("Player Camera Settings")]
+    [Title("Player Camera Settings")]
     [SerializeField] private CinemachineCamera cinemachineCamera;
 
-    [Header("Player Animation Settings")]
+    [Title("Player Animation Settings")]
     [SerializeField] private float animationSmoothTime = 0.1f;
 
-    [Header("Animation Rig Settings")]
+    [Title("Animation Rig Settings")]
     [SerializeField] private Transform aimTarget;
     [SerializeField] private float aimDistance;
 
@@ -34,7 +36,6 @@ public class PlayerMovement : NetworkBehaviour
     private Vector2 currentAnimationBlendVector;
     private Vector2 animationVelocity;
     
-
     private void Start() 
     {
         if (!IsOwner) return;
@@ -105,7 +106,7 @@ public class PlayerMovement : NetworkBehaviour
         controller.Move(moveDirection * (currentSpeed * Time.deltaTime));
 
         // Apply gravity
-        playerVelocity.y += gravityValue * Time.deltaTime;
+        playerVelocity.y += GravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
     }
 
