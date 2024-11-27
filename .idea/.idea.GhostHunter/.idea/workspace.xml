@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f023d18-f4da-4262-aaa7-f24f0902f926" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Equipments/EmfActivate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GhostHunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GhostHunter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant FP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant FP.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant TP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant TP.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Equipments/FlashlightActivate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Equipments/FlashlightActivate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IActivatable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IActivatable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerEquipmentActivate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerEquipmentActivate.cs" afterDir="false" />
-    </list>
+    <list default="true" id="7f023d18-f4da-4262-aaa7-f24f0902f926" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,7 +123,7 @@
       <workItem from="1732481149954" duration="2988000" />
       <workItem from="1732522884210" duration="17100000" />
       <workItem from="1732741576417" duration="15000" />
-      <workItem from="1732741607814" duration="1318000" />
+      <workItem from="1732741607814" duration="2959000" />
     </task>
     <servers />
   </component>

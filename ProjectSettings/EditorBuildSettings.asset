@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/PrototypeAssets/StarterAssets/FirstPersonController/Scenes/Playground.unity
     guid: 707acc8dffb72b144bb1ffbe1c965f3d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FarmHouse.unity
     guid: a8d153126e68d7941ab767578ed2c276
   m_configObjects:
