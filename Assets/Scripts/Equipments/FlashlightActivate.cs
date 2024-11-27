@@ -1,12 +1,16 @@
+using Interfaces;
 using UnityEngine;
 
-public class FlashlightActivate : MonoBehaviour, IActivatable
+namespace Equipments
 {
-    [SerializeField] private FlashlightEventSO flashlightEvent;
-
-    public void Activate(ulong networkObjectId)
+    public class FlashlightActivate : MonoBehaviour, IActivatable
     {
-        flashlightEvent.ToggleFlashlight(networkObjectId);
-    }
+        [SerializeField] private FlashlightEventSO flashlightEvent;
 
+        public void Activate(ulong networkObjectId)
+        {
+            flashlightEvent.ToggleFlashlight(networkObjectId);
+        }
+
+    }
 }
