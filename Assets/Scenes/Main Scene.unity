@@ -155,7 +155,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2039
 --- !u!114 &9970958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6870,6 +6870,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LobbyManager
       objectReference: {fileID: 0}
+    - target: {fileID: 877446464985263710, guid: 5e963931acde9ba4dbf303151aaefaf9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3180386884544075882, guid: 5e963931acde9ba4dbf303151aaefaf9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7489,6 +7493,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5200624654066510839, guid: 9ed823bd0e43b514cbe06c8437b59819, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8629698965881495072, guid: 9ed823bd0e43b514cbe06c8437b59819, type: 3}
+      propertyPath: m_ProtocolType
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
