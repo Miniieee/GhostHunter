@@ -16,14 +16,14 @@ MonoBehaviour:
   OnPlayModeIfWarnings: 0
   OnPlayModeIfErrors: 3
   OnPlayModeAlwaysCompleteValidationFully: 0
-  OnPlayModeFlashScreen: 1
+  OnPlayModeFlashScreen: 0
   OnPlayModeSetup:
     Profile: 0
     ProfileAsset: {fileID: 11400000, guid: 496510960d39fb6479230e1507838784, type: 2}
   OnBuild: 0
   OnBuildIfWarnings: 0
   OnBuildIfErrors: 3
-  OnBuildAlwaysCompleteValidationFully: 1
+  OnBuildAlwaysCompleteValidationFully: 0
   OnBuildFlashScreen: 0
   OnBuildSetup:
     Profile: 0
