@@ -1,4 +1,7 @@
-public interface IActivatable
+namespace Interfaces
 {
-    public void Activate(ulong networkObjectId);
+    public interface IActivatable
+    {
+        public void Activate(ulong networkObjectId);
+    }
 }

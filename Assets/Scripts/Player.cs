@@ -4,7 +4,7 @@ using Unity.Netcode;
 
 public class Player : NetworkBehaviour
 {
-    [Title("Internal objects only")]
+    [Title("Internal objects only", "These objects found inside the player prefab")]
     [SerializeField] private Transform firstPersonTarget;
     [SerializeField] private Transform thirdPersonTarget;
     [SerializeField] private SetObjectPosition refEquipmentRig;
