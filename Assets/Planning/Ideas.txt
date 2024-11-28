@@ -24,9 +24,9 @@
 		- Microphones
 			- for finding ghost, cone like shape detection
 		- Diary
-			- for ghost writing
+			- for ghost-writing
 		- Photo camera
-			- taking photoes for extra exp
+			- taking photos for extra exp
 		- Camera
 			- show screen at hideout
 		
@@ -41,7 +41,7 @@
 				- Ghost descriptions
 				- Selection list
 				- settings and exit
-				- selection list might should be like a line chart of possibble actions
+				- selection list might should be like a line chart of possible actions
 		
 		- Menu UI
 			- Start Game
