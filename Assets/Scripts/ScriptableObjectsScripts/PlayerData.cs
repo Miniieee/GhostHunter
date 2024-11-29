@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 namespace ScriptableObjectsScripts
 {
     [CreateAssetMenu(fileName = "PlayerData", menuName = "PlayerDataSO", order = 0)]
-    public class PlayerData : ScriptableObject
+    public class PlayerData : SerializedScriptableObject
     {
         public enum PlayerType
         {
@@ -23,13 +23,12 @@ namespace ScriptableObjectsScripts
         [Space(10)]
         [Title("Player Type", "Choose player or ghost to set specific properties")]
         [EnumToggleButtons] // Adds toggle buttons for the enum in the inspector
-        public PlayerType playerType = PlayerType.Player;
+        public PlayerType playerType;
 
         [Space(10)]
         [Title("Movement Settings", "Shared settings for all player types")]
         public float playerSpeed = 2.0f;
         public float sprintSpeed = 5.0f;
-        
         
         [Space(10)]
         [Title("Ghost Types", "Choose the ghost type to set specific properties")]
@@ -54,12 +53,5 @@ namespace ScriptableObjectsScripts
         public bool isGhostWritingToggle;
         [ShowIf("playerType", PlayerType.Ghost)]
         public bool isFingerPrintsToggle;
-        
-        
-        private static GhostType[] GetGhostAbilities()
-        {
-            return (GhostType[])System.Enum.GetValues(typeof(GhostType));
-        }
-        
     }
 }

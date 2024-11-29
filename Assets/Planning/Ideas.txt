@@ -57,4 +57,7 @@
 	Map design
 		- Finish Downstairs layout
 		- 
-				
+		
+		
+    Not flushed out ideas
+            - Ghosts evolving, changing their behavior		

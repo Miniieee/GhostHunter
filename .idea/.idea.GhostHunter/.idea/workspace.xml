@@ -5,13 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f023d18-f4da-4262-aaa7-f24f0902f926" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjectsScripts/PlayerData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjectsScripts/PlayerData.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GhostHunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GhostHunter/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Planning/Ideas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planning/Ideas.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant FP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant FP.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant TP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant TP.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Equipments/EmfActivate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Equipments/EmfActivate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/GhostData/DemonData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/GhostData/DemonData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/GhostData/SpiritData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/GhostData/SpiritData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/PlayerData/PlayerData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/PlayerData/PlayerData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EquipmentNetworkSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EquipmentNetworkSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Equipments/FlashlightActivate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Equipments/FlashlightActivate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FlashlightToggle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FlashlightToggle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectGrabbable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectGrabbable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerPickup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerPickup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjectsScripts/EquipmentListSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjectsScripts/EquipmentListSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjectsScripts/EquipmentSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjectsScripts/EquipmentSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjectsScripts/FlashlightEventSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjectsScripts/FlashlightEventSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjectsScripts/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjectsScripts/PlayerData.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +154,7 @@
       <workItem from="1732741607814" duration="2959000" />
       <workItem from="1732826400696" duration="3150000" />
       <workItem from="1732830313015" duration="1550000" />
-      <workItem from="1732872428291" duration="7213000" />
+      <workItem from="1732872428291" duration="13483000" />
     </task>
     <servers />
   </component>

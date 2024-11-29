@@ -1,4 +1,5 @@
 using Interfaces;
+using ScriptableObjectsScripts;
 using UnityEngine;
 
 namespace Equipments

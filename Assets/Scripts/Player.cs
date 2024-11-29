@@ -1,3 +1,4 @@
+using ScriptableObjectsScripts;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Unity.Netcode;
@@ -10,6 +11,7 @@ public class Player : NetworkBehaviour
     [SerializeField] private SetObjectPosition refEquipmentRig;
 
     private CameraRotationFollower playerVisuals;
+    private PlayerData playerData;
 
     private void Awake()
     {
@@ -55,5 +57,8 @@ public class Player : NetworkBehaviour
         }
     }
 
-
+    public void SetPlayerData(PlayerData data)
+    {
+        playerData = data;
+    }
 }

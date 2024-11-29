@@ -15,9 +15,9 @@ MonoBehaviour:
   playerType: 0
   playerSpeed: 2
   sprintSpeed: 5
-  ghostType: 2
-  emfIntensity: 3.93
-  temperatureAnomaly: -6.79
+  ghostType: 0
+  emfIntensity: 3.85
+  temperatureAnomaly: -5.08
   isSpiritBoxToggle: 0
   isGhostWritingToggle: 0
   isFingerPrintsToggle: 0
