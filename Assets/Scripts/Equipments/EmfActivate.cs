@@ -1,5 +1,6 @@
 using System;
 using Interfaces;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Equipments
@@ -8,10 +9,18 @@ namespace Equipments
     {
         private bool emfToggle = false;
         private SphereCollider sphereCollider;
+        private float emfValue = 0f;
+        
+        [Title("Emf Settings", "Settings for the Emf reader")]
+        [SerializeField] private float detectionRange = 5f;
         
         private void Start()
         {
             sphereCollider = GetComponent<SphereCollider>();
+            
+            sphereCollider.isTrigger = true;
+            sphereCollider.radius = detectionRange;
+            
             sphereCollider.enabled = false;
         }
 
@@ -23,26 +32,22 @@ namespace Equipments
                 Debug.Log("Emf is on player ID: " + networkObjectId);
                 sphereCollider.enabled = true;
                 //turn on emf lights
-                //activates sphere collider
-                //on collision with ghost, ghost will be detected based on its distance and activity level
             }
             else
             {
                 Debug.Log("Emf is off player ID: " + networkObjectId);
                 sphereCollider.enabled = false;
                 //turn off emf lights
-                //deactivates sphere collider
             }
         }
         
         private void OnTriggerStay(Collider other)
         {
-            if (other.gameObject.CompareTag("Ghost"))
-            {
-                Debug.Log("Ghost detected");
-                float distance = Vector3.Distance(transform.position, other.transform.position);
-                Debug.Log("Distance: " + distance);
-            }
+            if (!other.gameObject.CompareTag("Ghost")) return;
+            
+            float distance = Vector3.Distance(transform.position, other.transform.position);
+            
+            
         }
     }
 }

@@ -29,6 +29,8 @@
 			- taking photos for extra exp
 		- Camera
 			- show screen at hideout
+		- Fingerprints
+            - for finding ghost
 		
 		Weapons
 			- Trapping summoning circle
