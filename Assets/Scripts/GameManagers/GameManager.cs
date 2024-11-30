@@ -1,11 +1,10 @@
-using System;
 using UnityEngine;
 
 namespace GameManagers
 {
-    public class PlayerManager : MonoBehaviour
+    public class GameManager : MonoBehaviour
     {
-        public static PlayerManager Instance { get; private set; }
+        public static GameManager Instance { get; private set; }
 
         private void Awake()
         {
@@ -17,6 +16,11 @@ namespace GameManagers
             {
                 Destroy(gameObject);
             }
+        }
+
+        private void Start()
+        {
+            DontDestroyOnLoad(this.gameObject);
         }
     }
 }
