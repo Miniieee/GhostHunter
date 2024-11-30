@@ -14,6 +14,7 @@ namespace Equipments
         [Title("Emf Settings", "Settings for the Emf reader")]
         [SerializeField] private float detectionRange = 5f;
         
+        
         private void Start()
         {
             sphereCollider = GetComponent<SphereCollider>();
@@ -44,10 +45,8 @@ namespace Equipments
         private void OnTriggerStay(Collider other)
         {
             if (!other.gameObject.CompareTag("Ghost")) return;
-            
+
             float distance = Vector3.Distance(transform.position, other.transform.position);
-            
-            
         }
     }
 }
