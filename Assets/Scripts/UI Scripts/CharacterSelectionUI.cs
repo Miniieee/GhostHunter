@@ -28,5 +28,15 @@ namespace UI_Scripts
             lobbyNameText.text = LobbyNameString + lobby.Name;
             lobbyCodeText.text = LobbyCodeString + lobby.LobbyCode;
         }
+
+        public void Show()
+        {
+            this.gameObject.SetActive(true);
+        }
+
+        public void Hide()
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 }
