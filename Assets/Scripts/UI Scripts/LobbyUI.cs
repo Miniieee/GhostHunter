@@ -16,6 +16,7 @@ namespace UI_Scripts
         [SerializeField] private TMP_InputField lobbyCodeInputField;
 
         [SerializeField] private LobbyCreateUI lobbyCreateUI;
+        [SerializeField] private CharacterSelectionUI characterSelectUI; 
 
 
         private void Awake()
@@ -29,12 +30,12 @@ namespace UI_Scripts
 
         private void Start()
         {
-            Show();
+            Hide();
         }
 
         private void StartLobbyCreateUI()
         {
-            lobbyCreateUI.Hide();
+            lobbyCreateUI.Show();
         }
 
         public void Show()
@@ -45,6 +46,8 @@ namespace UI_Scripts
         public void Hide()
         {
             gameObject.SetActive(false);
+            lobbyCreateUI.Hide();
+            characterSelectUI.Hide();
         }
     }
 }

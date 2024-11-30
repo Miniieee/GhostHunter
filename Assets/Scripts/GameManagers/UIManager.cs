@@ -17,7 +17,7 @@ namespace GameManagers
         private void Start()
         {
             playerControls.UI.Esc.performed += _ => ToggleVisibility();
-            lobbyUI = FindFirstObjectByType<LobbyUI>();
+            lobbyUI = FindFirstObjectByType<LobbyUI>(findObjectsInactive: FindObjectsInactive.Include);
         }
 
         private void OnEnable()
@@ -32,7 +32,14 @@ namespace GameManagers
 
         private void ToggleVisibility()
         {
-            lobbyUI.gameObject.SetActive(!lobbyUI.gameObject.activeSelf);
+            if (lobbyUI.gameObject.activeSelf == true)
+            {
+                lobbyUI.Hide();
+            }
+            else
+            {
+                lobbyUI.Show();
+            }
         }
     }
 }
