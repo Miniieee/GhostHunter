@@ -1,25 +1,12 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Serialization;
+using Enums;
 
 namespace ScriptableObjectsScripts
 {
     [CreateAssetMenu(fileName = "PlayerData", menuName = "PlayerDataSO", order = 0)]
     public class PlayerData : SerializedScriptableObject
     {
-        public enum PlayerType
-        {
-            Player,
-            Ghost
-        }
-        
-        public enum GhostType
-        {
-            Demon,
-            Spirit,
-            Yokai
-        }
-        
         [Space(10)]
         [Title("Player Type", "Choose player or ghost to set specific properties")]
         [EnumToggleButtons] // Adds toggle buttons for the enum in the inspector

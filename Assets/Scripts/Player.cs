@@ -5,13 +5,15 @@ using Unity.Netcode;
 
 public class Player : NetworkBehaviour
 {
+    [Title("Player Data Scriptable Object", "Set the player data here")]
+    [SerializeField] private PlayerData playerData;
+    
     [Title("Internal objects only", "These objects found inside the player prefab")]
     [SerializeField] private Transform firstPersonTarget;
     [SerializeField] private Transform thirdPersonTarget;
     [SerializeField] private SetObjectPosition refEquipmentRig;
 
     private CameraRotationFollower playerVisuals;
-    private PlayerData playerData;
 
     private void Awake()
     {
@@ -33,7 +35,6 @@ public class Player : NetworkBehaviour
 
             refEquipmentRig.SetTargetPosition(thirdPersonTarget);
         }
-
     }
 
     private void SetLayerRecursively(GameObject obj, int newLayer)
@@ -60,5 +61,10 @@ public class Player : NetworkBehaviour
     public void SetPlayerData(PlayerData data)
     {
         playerData = data;
+    }
+    
+    public PlayerData GetPlayerData()
+    {
+        return playerData;
     }
 }
