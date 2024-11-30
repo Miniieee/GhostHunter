@@ -1,18 +1,21 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.Services.Lobbies.Models;
+using UnityEngine.Serialization;
 
 public class CharacterSelectionUI : MonoBehaviour
 {
-    private const string lobbyNameString = "Lobby Name: ";
-    private const string lobbyCodeString = "Lobby Code: ";
+    private const string LobbyNameString = "Lobby Name: ";
+    private const string LobbyCodeString = "Lobby Code: ";
 
-    [Header("Text Elements")]
-    [SerializeField] private TextMeshProUGUI LobbyNameText;
-    [SerializeField] private TextMeshProUGUI LobbyCodeText;
+    [Title("Text Elements")] [SerializeField]
+    private TextMeshProUGUI lobbyNameText;
 
-    [Header("Buttons")]
+    [SerializeField] private TextMeshProUGUI lobbyCodeText;
+
+    [Title("Buttons")]
     [SerializeField] private Button closeButton;
     [SerializeField] private Button readyButton;
 
@@ -20,8 +23,8 @@ public class CharacterSelectionUI : MonoBehaviour
 
         Lobby lobby = LobbyServices.Instance.GetLobby();
 
-        LobbyNameText.text = lobbyNameString + lobby.Name;
-        LobbyCodeText.text = lobbyCodeString + lobby.LobbyCode;
+        lobbyNameText.text = LobbyNameString + lobby.Name;
+        lobbyCodeText.text = LobbyCodeString + lobby.LobbyCode;
     }
 
 
