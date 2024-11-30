@@ -1,3 +1,5 @@
+using System;
+using ScriptableObjectsScripts;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Unity.Netcode;
@@ -7,10 +9,6 @@ using Unity.Cinemachine;
 public class PlayerMovement : NetworkBehaviour
 {
     private const float GravityValue = -9.81f;
-    
-    [Title("Player Movement Settings")]
-    [SerializeField] private float playerSpeed = 2.0f;
-    [SerializeField] private float sprintSpeed = 5.0f;
 
     [Title("Player Camera Settings")]
     [SerializeField] private CinemachineCamera cinemachineCamera;
@@ -35,12 +33,25 @@ public class PlayerMovement : NetworkBehaviour
 
     private Vector2 currentAnimationBlendVector;
     private Vector2 animationVelocity;
-    
-    private void Start() 
+
+    private Player player;
+    private PlayerData playerData;
+
+    private float playerSpeed;
+    private float sprintSpeed;
+
+    private void Start()
     {
         if (!IsOwner) return;
-        
-        controller = gameObject.GetComponent<CharacterController>();
+
+        player = GetComponent<Player>();
+        playerData = player.GetPlayerData();
+        animator = GetComponent<Animator>();
+        Initialize();
+    }
+
+    private void Initialize()
+    {
         inputManager = InputManager.Instance;
         if (Camera.main != null) cameraTransform = Camera.main.transform;
 
@@ -53,11 +64,13 @@ public class PlayerMovement : NetworkBehaviour
             cinemachineCamera.Priority = 0;
         }
 
-        //Animations initialization
-        animator = GetComponent<Animator>();
+        controller = gameObject.GetComponent<CharacterController>();
 
         moveXAnimationParameterId = Animator.StringToHash("MoveX");
         moveYAnimationParameterId = Animator.StringToHash("MoveY");
+
+        playerSpeed = playerData.playerSpeed;
+        sprintSpeed = playerData.sprintSpeed;
     }
 
     private void Update()

@@ -1,10 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "EquipmentListSO", menuName = "ScriptableObjects/EquipmentListSO", order = 1)]
-public class EquipmentListSO : ScriptableObject
+namespace ScriptableObjectsScripts
 {
-    public List<EquipmentSO> equipmentSOList;
+    [CreateAssetMenu(fileName = "EquipmentListSO", menuName = "ScriptableObjects/EquipmentListSO", order = 1)]
+    public class EquipmentListSO : ScriptableObject
+    {
+        public List<EquipmentSO> equipmentSOList;
+    }
 }
 
 

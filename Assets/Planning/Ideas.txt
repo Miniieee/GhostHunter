@@ -29,6 +29,8 @@
 			- taking photos for extra exp
 		- Camera
 			- show screen at hideout
+		- Fingerprints
+            - for finding ghost
 		
 		Weapons
 			- Trapping summoning circle
@@ -55,4 +57,7 @@
 	Map design
 		- Finish Downstairs layout
 		- 
-				
+		
+		
+    Not flushed out ideas
+            - Ghosts evolving, changing their behavior		

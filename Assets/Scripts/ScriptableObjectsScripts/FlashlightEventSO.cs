@@ -1,13 +1,16 @@
 using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "FlashlightEventSO", menuName = "EventBuses/FlashlightEventSO")]
-public class FlashlightEventSO : ScriptableObject
+namespace ScriptableObjectsScripts
 {
-    public event Action<ulong> OnFlashlightEvent;
-
-    public void ToggleFlashlight(ulong networkID)
+    [CreateAssetMenu(fileName = "FlashlightEventSO", menuName = "EventBuses/FlashlightEventSO")]
+    public class FlashlightEventSO : ScriptableObject
     {
-        OnFlashlightEvent?.Invoke(networkID);
+        public event Action<ulong> OnFlashlightEvent;
+
+        public void ToggleFlashlight(ulong networkID)
+        {
+            OnFlashlightEvent?.Invoke(networkID);
+        }
     }
 }

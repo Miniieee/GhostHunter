@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7137205205352520945}
   - component: {fileID: 5311404859487156810}
   - component: {fileID: 5184198251503614803}
+  - component: {fileID: -2158238046398258783}
   m_Layer: 7
   m_Name: EMF Network
   m_TagString: Untagged
@@ -155,6 +156,27 @@ MonoBehaviour:
   UseRigidBodyForMotion: 0
   AutoUpdateKinematicState: 1
   AutoSetKinematicOnDespawn: 1
+--- !u!135 &-2158238046398258783
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8606766432525677704}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2297599542126772707
 PrefabInstance:
   m_ObjectHideFlags: 0

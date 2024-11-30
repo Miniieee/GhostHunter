@@ -579,6 +579,7 @@ GameObject:
   - component: {fileID: 5179115991546748802}
   - component: {fileID: 3970927536793881601}
   - component: {fileID: 6591499851779620476}
+  - component: {fileID: -1782506256107102463}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -740,6 +741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
+  playerData: {fileID: 11400000, guid: 1033adda748ca8b4586304b15c8cc8b4, type: 2}
   firstPersonTarget: {fileID: 5806555793743000809}
   thirdPersonTarget: {fileID: 501311632308547068}
   refEquipmentRig: {fileID: 523130625934362451}
@@ -756,9 +758,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  playerSpeed: 1.8
-  sprintSpeed: 2.5
-  gravityValue: -9.81
   cinemachineCamera: {fileID: 2928644724915465429}
   animationSmoothTime: 0.1
   aimTarget: {fileID: 3933782762116363018}
@@ -827,6 +826,18 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   flashlight: {fileID: 6598377942383327541}
   flashlightActivate: {fileID: 11400000, guid: 6a265f8eee9a79844999b8a6d1e57a26, type: 2}
+--- !u!114 &-1782506256107102463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579094249820689430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97adad7740de0414a8adee380eba9115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1595745218568532756
 GameObject:
   m_ObjectHideFlags: 0
