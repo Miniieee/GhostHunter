@@ -201,6 +201,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRange: 5
-  detectionLayer:
-    serializedVersion: 2
-    m_Bits: 2039
+  debugSphere: {fileID: 4099168302120032979, guid: ea6f19167830b7842b533ebff3f36db3, type: 3}
