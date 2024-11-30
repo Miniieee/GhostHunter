@@ -1,32 +1,32 @@
 using Sirenix.OdinInspector;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using Unity.Services.Lobbies.Models;
-using UnityEngine.Serialization;
+using UnityEngine;
+using UnityEngine.UI;
 
-public class CharacterSelectionUI : MonoBehaviour
+namespace UI_Scripts
 {
-    private const string LobbyNameString = "Lobby Name: ";
-    private const string LobbyCodeString = "Lobby Code: ";
+    public class CharacterSelectionUI : MonoBehaviour
+    {
+        private const string LobbyNameString = "Lobby Name: ";
+        private const string LobbyCodeString = "Lobby Code: ";
 
-    [Title("Text Elements")] [SerializeField]
-    private TextMeshProUGUI lobbyNameText;
+        [Title("Text Elements")] [SerializeField]
+        private TextMeshProUGUI lobbyNameText;
 
-    [SerializeField] private TextMeshProUGUI lobbyCodeText;
+        [SerializeField] private TextMeshProUGUI lobbyCodeText;
 
-    [Title("Buttons")]
-    [SerializeField] private Button closeButton;
-    [SerializeField] private Button readyButton;
+        [Title("Buttons")] [SerializeField] private Button closeButton;
+        [SerializeField] private Button readyButton;
 
-    public void Start() {
+        public void Start()
+        {
+            this.gameObject.SetActive(false);
 
-        Lobby lobby = LobbyServices.Instance.GetLobby();
+            Lobby lobby = LobbyServices.Instance.GetLobby();
 
-        lobbyNameText.text = LobbyNameString + lobby.Name;
-        lobbyCodeText.text = LobbyCodeString + lobby.LobbyCode;
+            lobbyNameText.text = LobbyNameString + lobby.Name;
+            lobbyCodeText.text = LobbyCodeString + lobby.LobbyCode;
+        }
     }
-
-
-
 }
