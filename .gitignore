@@ -86,3 +86,4 @@ crashlytics-build.properties
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+.idea/.idea.GhostHunter/.idea/workspace.xml
