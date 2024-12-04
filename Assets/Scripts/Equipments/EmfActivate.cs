@@ -20,6 +20,7 @@ namespace Equipments
         private void Start()
         {
             detectionRange = emfEquipmentSo.range;
+            
             sphereCollider = GetComponent<SphereCollider>();
             
             sphereCollider.isTrigger = true;
@@ -50,6 +51,15 @@ namespace Equipments
             if (!other.gameObject.CompareTag("Ghost")) return;
 
             float distance = Vector3.Distance(transform.position, other.transform.position);
+            if (distance < detectionRange)
+            {
+                if (other.TryGetComponent<Ghost>(out Ghost ghost))
+                {
+                    emfValue = ghost.GetEmfValue();
+                }
+
+                Debug.Log("EMF Value: " + emfValue);
+            }
         }
     }
 }

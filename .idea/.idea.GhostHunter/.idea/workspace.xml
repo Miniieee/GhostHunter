@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f023d18-f4da-4262-aaa7-f24f0902f926" name="Changes" comment="">
+    <list default="true" id="7f023d18-f4da-4262-aaa7-f24f0902f926" name="Changes" comment="renaming">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GhostHunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GhostHunter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Equipments/EMF_ReaderSO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Equipments/EMF_ReaderSO.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/GhostData/DemonData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/GhostData/DemonData.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Equipments/EmfActivate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Equipments/EmfActivate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ghost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ghost.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,14 +20,18 @@
     <option name="firstShow" value="false" />
   </component>
   <component name="Git.Settings">
+    <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Tamas" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Miniieee&quot;
-  }
-}</component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {}
+}]]></component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Miniieee/GhostHunter.git&quot;,
@@ -110,13 +116,15 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="3472">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="3472" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list />
+        <list>
+          <MonoRuntime />
+        </list>
       </option>
       <option name="selectedOptions">
         <list />
@@ -151,8 +159,17 @@
       <workItem from="1732978318924" duration="1742000" />
       <workItem from="1732980647549" duration="1052000" />
       <workItem from="1733006922792" duration="1557000" />
-      <workItem from="1733338405452" duration="2364000" />
+      <workItem from="1733338405452" duration="4115000" />
     </task>
+    <task id="LOCAL-00001" summary="renaming">
+      <option name="closed" value="true" />
+      <created>1733345357689</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1733345357689</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +196,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="moved equipment data to scriptable object" />
+    <MESSAGE value="renaming" />
+    <option name="LAST_COMMIT_MESSAGE" value="renaming" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
