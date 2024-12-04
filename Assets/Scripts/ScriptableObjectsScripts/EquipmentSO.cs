@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ScriptableObjectsScripts
 {
@@ -10,7 +11,8 @@ namespace ScriptableObjectsScripts
         public GameObject equipmentFirstPersonPrefab;
         public string equipmentName;
 
-        public float detectionRange;
+        [FormerlySerializedAs("detectionRange")]
+        public float range;
         public float activeTime;
     }
 }

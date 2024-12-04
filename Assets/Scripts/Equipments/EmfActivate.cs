@@ -19,7 +19,7 @@ namespace Equipments
         
         private void Start()
         {
-            detectionRange = emfEquipmentSo.detectionRange;
+            detectionRange = emfEquipmentSo.range;
             sphereCollider = GetComponent<SphereCollider>();
             
             sphereCollider.isTrigger = true;
