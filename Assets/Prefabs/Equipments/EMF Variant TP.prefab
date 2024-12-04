@@ -200,5 +200,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb625ba23804c52be8240a010258f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRange: 5
-  debugSphere: {fileID: 4099168302120032979, guid: ea6f19167830b7842b533ebff3f36db3, type: 3}
+  emfEquipmentSo: {fileID: 11400000, guid: 02f5dcc7c1eda554bbdbfbd73dc283a8, type: 2}
