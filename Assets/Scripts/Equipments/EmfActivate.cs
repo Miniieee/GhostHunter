@@ -58,7 +58,8 @@ namespace Equipments
                     emfValue = ghost.GetEmfValue();
                 }
 
-                Debug.Log("EMF Value: " + emfValue);
+                //add sound effect
+                //light up the emf reader
             }
         }
     }

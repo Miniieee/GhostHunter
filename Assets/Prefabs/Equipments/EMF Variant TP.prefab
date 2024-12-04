@@ -100,6 +100,34 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4364807551962915055, guid: 34f8efa13b8a9d24ea46272d4017c235, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.17799
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364807551962915055, guid: 34f8efa13b8a9d24ea46272d4017c235, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.17799
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364807551962915055, guid: 34f8efa13b8a9d24ea46272d4017c235, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.17799
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364807551962915055, guid: 34f8efa13b8a9d24ea46272d4017c235, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.1143398
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364807551962915055, guid: 34f8efa13b8a9d24ea46272d4017c235, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.088995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364807551962915055, guid: 34f8efa13b8a9d24ea46272d4017c235, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.7465336
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364807551962915055, guid: 34f8efa13b8a9d24ea46272d4017c235, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8606766432525677704, guid: 34f8efa13b8a9d24ea46272d4017c235, type: 3}
       propertyPath: m_Name
       value: EMF Variant TP

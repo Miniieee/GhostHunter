@@ -1,7 +1,6 @@
 using ScriptableObjectsScripts;
 using UnityEngine;
 using Enums;
-using Sirenix.OdinInspector;
 public class Ghost : MonoBehaviour
 {
     private PlayerData playerData;
