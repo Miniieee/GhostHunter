@@ -2641,6 +2641,8 @@ GameObject:
   - component: {fileID: 927232960}
   - component: {fileID: 927232959}
   - component: {fileID: 927232963}
+  - component: {fileID: 927232964}
+  - component: {fileID: 927232965}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Ghost
@@ -2764,6 +2766,35 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &927232964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927232958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97adad7740de0414a8adee380eba9115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &927232965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927232958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b01cb51a261b00449e5ca72c4197efb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  playerData: {fileID: 11400000, guid: 9087ec2865394074aa22e794b64af2ce, type: 2}
+  firstPersonTarget: {fileID: 0}
+  thirdPersonTarget: {fileID: 0}
+  refEquipmentRig: {fileID: 0}
 --- !u!1 &947803479
 GameObject:
   m_ObjectHideFlags: 0

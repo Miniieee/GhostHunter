@@ -1,5 +1,6 @@
 using System;
 using Interfaces;
+using ScriptableObjectsScripts;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -10,13 +11,16 @@ namespace Equipments
         private bool emfToggle = false;
         private SphereCollider sphereCollider;
         private float emfValue = 0f;
-        
-        [Title("Emf Settings", "Settings for the Emf reader")]
-        [SerializeField] private float detectionRange = 5f;
+        private float detectionRange;
+
+        [Title("Equipment Data", "Drag the EMF Reader scriptable object here")] [SerializeField]
+        private EquipmentSO emfEquipmentSo;
         
         
         private void Start()
         {
+            detectionRange = emfEquipmentSo.range;
+            
             sphereCollider = GetComponent<SphereCollider>();
             
             sphereCollider.isTrigger = true;
@@ -47,6 +51,16 @@ namespace Equipments
             if (!other.gameObject.CompareTag("Ghost")) return;
 
             float distance = Vector3.Distance(transform.position, other.transform.position);
+            if (distance < detectionRange)
+            {
+                if (other.TryGetComponent<Ghost>(out Ghost ghost))
+                {
+                    emfValue = ghost.GetEmfValue();
+                }
+
+                //add sound effect
+                //light up the emf reader
+            }
         }
     }
 }

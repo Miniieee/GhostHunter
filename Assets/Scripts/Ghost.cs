@@ -1,42 +1,36 @@
 using ScriptableObjectsScripts;
 using UnityEngine;
 using Enums;
-
 public class Ghost : MonoBehaviour
 {
-    private Player player;
     private PlayerData playerData;
-
+    private Player player;
     private float emfValue;
     private float temperatureValue;
 
     private void Awake()
     {
         player = GetComponent<Player>();
-        playerData = player.GetPlayerData();
     }
 
     private void Start()
     {
-        if (playerData.playerType != PlayerType.Ghost)
+        playerData = player.GetPlayerData();
+
+        if (playerData.playerType == PlayerType.Ghost)
+        {
+            this.enabled = true;
+            emfValue = playerData.emfIntensity;
+            temperatureValue = playerData.temperatureAnomaly;
+        }
+        else
         {
             this.enabled = false;
         }
     }
 
-    private void Initialize()
+    public float GetEmfValue()
     {
-        emfValue = playerData.emfIntensity;
-        temperatureValue = playerData.temperatureAnomaly;
-    }
-
-    private void GetEmfValue()
-    {
-        Debug.Log("EMF Value: " + emfValue);
-    }
-
-    private void GetTemperatureValue()
-    {
-        Debug.Log("Temperature Value: " + temperatureValue);
+        return emfValue;
     }
 }
