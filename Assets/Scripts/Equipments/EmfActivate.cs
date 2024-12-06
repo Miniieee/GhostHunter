@@ -26,6 +26,9 @@ namespace Equipments
         [Title("Indicator Materials", "Drag the materials for the EMF reader here")] [SerializeField]
         private Material[] indicatorMaterials;
 
+        [Title("Indicator Mesh Renderers", "Drag the mesh renderers for the EMF reader here")] [SerializeField]
+        private MeshRenderer[] indicatorMeshRenderers;
+
         
         private void Start()
         {
@@ -36,8 +39,14 @@ namespace Equipments
             sphereCollider.radius = detectionRange;
             sphereCollider.enabled = false;
 
-            // Use the original materials or instantiate them if needed
-            indicatorMaterialsInstance = indicatorMaterials;
+            indicatorMaterialsInstance = new Material[indicatorMaterials.Length];
+            for (int i = 0; i < indicatorMaterials.Length; i++)
+            {
+                // Instantiate a new material so it doesn't affect other devices
+                indicatorMaterialsInstance[i] = new Material(indicatorMaterials[i]);
+                indicatorMeshRenderers[i].material = indicatorMaterialsInstance[i];
+            }
+            
             emfLerpSpeed = emfEquipmentSo.lerpSpeed;
         }
 
@@ -121,5 +130,7 @@ namespace Equipments
                 }
             }
         }
+        
+        
     }
 }

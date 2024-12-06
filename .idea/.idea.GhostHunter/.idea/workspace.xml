@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f023d18-f4da-4262-aaa7-f24f0902f926" name="Changes" comment="" />
+    <list default="true" id="7f023d18-f4da-4262-aaa7-f24f0902f926" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GhostHunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GhostHunter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_AmbientOcclusion.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_AmbientOcclusion.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_Emission.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_Emission.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_Metallic.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_Metallic.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_MetallicSmoothness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_MetallicSmoothness.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_Normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_Roughness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_Roughness.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/textures/emf_meter_AmbientOcclusion.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/textures/emf_meter_AmbientOcclusion.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/textures/emf_meter_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/textures/emf_meter_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/textures/emf_meter_Metallic.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/textures/emf_meter_Metallic.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/textures/emf_meter_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/textures/emf_meter_Normal.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/textures/emf_meter_Roughness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/textures/emf_meter_Roughness.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Equipments/EMF indicator lights/GreenOnIndicator.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Equipments/EMF indicator lights/GreenOnIndicator.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Equipments/EMF indicator lights/Level2Indicator.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Equipments/EMF indicator lights/Level2Indicator.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Equipments/EMF indicator lights/Level3Indicator.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Equipments/EMF indicator lights/Level3Indicator.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Equipments/EMF indicator lights/Level4Indicator.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Equipments/EMF indicator lights/Level4Indicator.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Planning/Ideas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planning/Ideas.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant FP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant FP.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant TP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant TP.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EquipmentListSO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/EquipmentListSO.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Equipments/EmfActivate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Equipments/EmfActivate.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +62,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b5bf0c891ea345fe93688f835df32fdc1dda00/c8/6afdba52/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/OdinNetworkBehaviourEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ghost.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -111,15 +136,13 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="31564">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="31564" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list>
-          <MonoRuntime />
-        </list>
+        <list />
       </option>
       <option name="selectedOptions">
         <list />
@@ -157,7 +180,8 @@
       <workItem from="1733338405452" duration="4672000" />
       <workItem from="1733347554728" duration="1221000" />
       <workItem from="1733437688616" duration="98000" />
-      <workItem from="1733476339430" duration="4246000" />
+      <workItem from="1733476339430" duration="10293000" />
+      <workItem from="1733498093864" duration="707000" />
     </task>
     <task id="LOCAL-00001" summary="renaming">
       <option name="closed" value="true" />
