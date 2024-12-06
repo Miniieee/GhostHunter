@@ -6,11 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7f023d18-f4da-4262-aaa7-f24f0902f926" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GhostHunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GhostHunter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/NOT_Lonely/Object Placement Tool/DemoScene/ObjectPlacementTool_demoScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/NOT_Lonely/Object Placement Tool/DemoScene/ObjectPlacementTool_demoScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Network.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Network.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant FP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant FP.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant TP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant TP.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Equipments/EmfActivate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Equipments/EmfActivate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjectsScripts/EquipmentSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjectsScripts/EquipmentSO.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,14 +40,11 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1a34d7ee85f44ff2a9df5d0ea5a6ee325735b0/8a/22abfd43/AsyncTaskMethodBuilder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b5bf0c891ea345fe93688f835df32fdc1dda00/c8/6afdba52/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/OdinNetworkBehaviourEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Unity/GhostHunter/Assets/Prefabs/Equipments/EMF Variant FP.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Unity/GhostHunter/Assets/Prefabs/Equipments/EMF Variant TP.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Unity/GhostHunter/Assets/Scripts/Equipments/EmfActivate.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ghost.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Unity/GhostHunter/Assets/Scripts/Ghost.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -121,13 +118,15 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="31564">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="31564" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list />
+        <list>
+          <MonoRuntime />
+        </list>
       </option>
       <option name="selectedOptions">
         <list />
@@ -165,6 +164,7 @@
       <workItem from="1733338405452" duration="4672000" />
       <workItem from="1733347554728" duration="1221000" />
       <workItem from="1733437688616" duration="98000" />
+      <workItem from="1733476339430" duration="3749000" />
     </task>
     <task id="LOCAL-00001" summary="renaming">
       <option name="closed" value="true" />

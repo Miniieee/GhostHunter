@@ -241,10 +241,30 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -3344043886331097934, guid: f7ca956af4adc6c4fb76adaa47b80143, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1b3a97087e953214aa07fe068023abd5, type: 2}
+    - target: {fileID: -141611810512329339, guid: f7ca956af4adc6c4fb76adaa47b80143, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 73a100b2503560846a70b027ea7d771d, type: 2}
+    - target: {fileID: 230567630227056890, guid: f7ca956af4adc6c4fb76adaa47b80143, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 684bdfbaef4052b4eb7c9b09a37dd16c, type: 2}
     - target: {fileID: 919132149155446097, guid: f7ca956af4adc6c4fb76adaa47b80143, type: 3}
       propertyPath: m_Name
       value: emfReader
       objectReference: {fileID: 0}
+    - target: {fileID: 3592342481408538646, guid: f7ca956af4adc6c4fb76adaa47b80143, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 65954cee7de10c94992bee2971f5aa69, type: 2}
+    - target: {fileID: 5095886218126129271, guid: f7ca956af4adc6c4fb76adaa47b80143, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a345a8a90cfb072418a5d7e81067cab3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

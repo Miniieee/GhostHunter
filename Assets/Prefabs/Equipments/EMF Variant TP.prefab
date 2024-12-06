@@ -229,3 +229,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emfEquipmentSo: {fileID: 11400000, guid: 02f5dcc7c1eda554bbdbfbd73dc283a8, type: 2}
+  indicatorMaterials:
+  - {fileID: 2100000, guid: 65954cee7de10c94992bee2971f5aa69, type: 2}
+  - {fileID: 2100000, guid: 73a100b2503560846a70b027ea7d771d, type: 2}
+  - {fileID: 2100000, guid: 1b3a97087e953214aa07fe068023abd5, type: 2}
+  - {fileID: 2100000, guid: a345a8a90cfb072418a5d7e81067cab3, type: 2}
+  - {fileID: 2100000, guid: 684bdfbaef4052b4eb7c9b09a37dd16c, type: 2}
