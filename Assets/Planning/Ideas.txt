@@ -10,11 +10,11 @@
 		- Flashlight
 			- Turn on and off
 		- EMF Reader
-			- shows emf levels in area (raycasts."half"sphere)
+			- shows emf levels in area
 			- if ghost interacts with something in the area, the emf level rises, if ghost has emf level 5, there is a chance to get emf 5 level, at hunt phase it will be 5 in the area
 			- there is a cooldown for the detection after the ghost has interacted with something
 		- Thermometer
-			- shows temperature (raycasts)
+			- shows temperature (using colliders)
 		- Motion sensor
 			- mountable on walls
 		- Crucifix

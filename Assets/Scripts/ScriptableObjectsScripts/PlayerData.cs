@@ -16,6 +16,7 @@ namespace ScriptableObjectsScripts
         [Title("Movement Settings", "Shared settings for all player types")]
         public float playerSpeed = 2.0f;
         public float sprintSpeed = 5.0f;
+        public float crouchSpeed = 1.0f;
         
         [Space(10)]
         [Title("Ghost Types", "Choose the ghost type to set specific properties")]

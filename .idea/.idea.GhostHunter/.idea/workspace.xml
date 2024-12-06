@@ -6,28 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7f023d18-f4da-4262-aaa7-f24f0902f926" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GhostHunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GhostHunter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_AmbientOcclusion.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_AmbientOcclusion.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_BaseColor.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_Emission.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_Emission.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_Metallic.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_Metallic.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_MetallicSmoothness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_MetallicSmoothness.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_Normal.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_Roughness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/source/emf_meter_Roughness.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/textures/emf_meter_AmbientOcclusion.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/textures/emf_meter_AmbientOcclusion.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/textures/emf_meter_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/textures/emf_meter_BaseColor.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/textures/emf_meter_Metallic.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/textures/emf_meter_Metallic.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/textures/emf_meter_Normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/textures/emf_meter_Normal.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/textures/emf_meter_Roughness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Skatchfab/kii-emf-meter/textures/emf_meter_Roughness.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Equipments/EMF indicator lights/GreenOnIndicator.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Equipments/EMF indicator lights/GreenOnIndicator.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Equipments/EMF indicator lights/Level2Indicator.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Equipments/EMF indicator lights/Level2Indicator.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Equipments/EMF indicator lights/Level3Indicator.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Equipments/EMF indicator lights/Level3Indicator.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Equipments/EMF indicator lights/Level4Indicator.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Equipments/EMF indicator lights/Level4Indicator.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Planning/Ideas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Planning/Ideas.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant FP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant FP.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant TP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant TP.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/EquipmentListSO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/EquipmentListSO.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Equipments/EmfActivate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Equipments/EmfActivate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjectsScripts/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjectsScripts/PlayerData.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +161,7 @@
       <workItem from="1733347554728" duration="1221000" />
       <workItem from="1733437688616" duration="98000" />
       <workItem from="1733476339430" duration="10293000" />
-      <workItem from="1733498093864" duration="707000" />
+      <workItem from="1733498093864" duration="2526000" />
     </task>
     <task id="LOCAL-00001" summary="renaming">
       <option name="closed" value="true" />
