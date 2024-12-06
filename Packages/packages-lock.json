@@ -405,7 +405,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.transport": {
-      "version": "2.3.0",
+      "version": "2.4.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -425,7 +425,7 @@
       }
     },
     "com.unity.visualscripting": {
-      "version": "1.9.4",
+      "version": "1.9.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {

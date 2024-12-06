@@ -6,11 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7f023d18-f4da-4262-aaa7-f24f0902f926" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GhostHunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GhostHunter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Equipments/EMF Lights Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Equipments/EMF Lights Material.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Network.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Network.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant FP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant FP.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant TP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Equipments/EMF Variant TP.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ghost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ghost.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/NOT_Lonely/Object Placement Tool/DemoScene/ObjectPlacementTool_demoScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/NOT_Lonely/Object Placement Tool/DemoScene/ObjectPlacementTool_demoScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +93,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.23f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.30f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath D:\Unity\GhostHunter -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Unity\GhostHunter" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -101,7 +101,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.23f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.30f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\Unity\GhostHunter -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Unity\GhostHunter" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -164,6 +164,7 @@
       <workItem from="1733006922792" duration="1557000" />
       <workItem from="1733338405452" duration="4672000" />
       <workItem from="1733347554728" duration="1221000" />
+      <workItem from="1733437688616" duration="98000" />
     </task>
     <task id="LOCAL-00001" summary="renaming">
       <option name="closed" value="true" />
