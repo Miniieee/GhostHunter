@@ -21,6 +21,7 @@
 			- placeable on floor
 		- Smudge
 			- usable in hand, burns and hides player from ghost
+			    - ghost rendering layer changeing, sound as well for a few seconds (needs testing)
 		- Spirit box
 			- activation in sphere, 
 		- Microphones
