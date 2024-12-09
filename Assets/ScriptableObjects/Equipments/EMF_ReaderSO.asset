@@ -16,5 +16,6 @@ MonoBehaviour:
   equipmentThirdPersonPrefab: {fileID: 5365992815489547841, guid: 7158ebd3521e9c74dab2461940338daa, type: 3}
   equipmentFirstPersonPrefab: {fileID: 5365992815489547841, guid: 65d3310325f1eca458ba2cbdd5e8b371, type: 3}
   equipmentName: EMF
-  detectionRange: 5
+  range: 5
   activeTime: 0
+  lerpSpeed: 20

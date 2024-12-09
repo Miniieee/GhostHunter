@@ -90,3 +90,5 @@ crashlytics-build.properties
 /.idea/.idea.GhostHunter/.idea
 /.idea/.idea.GhostHunter
 /.idea
+.idea/.idea.GhostHunter/.idea/workspace.xml
+/Assets/Scenes/AutoSave

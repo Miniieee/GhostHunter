@@ -14,5 +14,6 @@ namespace ScriptableObjectsScripts
         [FormerlySerializedAs("detectionRange")]
         public float range;
         public float activeTime;
+        public float lerpSpeed;
     }
 }
