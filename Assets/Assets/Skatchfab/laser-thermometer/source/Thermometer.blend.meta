@@ -1,9 +1,29 @@
 fileFormatVersion: 2
-guid: d84f20485a7cc3f46ad2ba7dcfb4af1e
+guid: 6f75b68e68e3e7e439efa68e1df0f51e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Buttons
+    second: {fileID: 2100000, guid: 9a1f044a464d2434ca6e31c2e61d1406, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Purple
+    second: {fileID: 2100000, guid: cad39e814a74bda449c56f350c32efa1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Screen
+    second: {fileID: 2100000, guid: de816a2eda53ab949bef53bc682f8034, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White
+    second: {fileID: 2100000, guid: fa1e6264ee0b4a647ba02f4f7fb9baf4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
