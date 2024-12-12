@@ -130,7 +130,6 @@ public class LobbyServices : MonoBehaviour
         {
             Debug.Log(e);
         }
-
     }
 
     public async void QuickJoin()
