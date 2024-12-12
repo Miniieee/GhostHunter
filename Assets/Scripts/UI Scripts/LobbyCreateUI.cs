@@ -25,7 +25,6 @@ namespace UI_Scripts
         private void StartLobbyCreateUI()
         {
             LobbyServices.Instance.CreateLobby(lobbyNameInputField.text, true);
-            //haracterSelectUI.gameObject.SetActive(true);
         }
 
         void Start()

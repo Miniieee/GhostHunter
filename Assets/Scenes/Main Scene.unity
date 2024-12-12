@@ -466,7 +466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &96473354
 RectTransform:
   m_ObjectHideFlags: 0
@@ -872,7 +872,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &261041934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1706,7 +1706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &649396367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1973,7 +1973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &673312175
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2010,8 +2010,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21259a0493514234593dba9b8a371804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lobbyNameText: {fileID: 0}
-  lobbyCodeText: {fileID: 0}
+  lobbyNameText: {fileID: 1369765659}
+  lobbyCodeText: {fileID: 743935836}
   closeButton: {fileID: 1411597511}
   readyButton: {fileID: 594921899}
 --- !u!4 &727263671 stripped
@@ -2797,6 +2797,7 @@ MonoBehaviour:
   firstPersonTarget: {fileID: 0}
   thirdPersonTarget: {fileID: 0}
   refEquipmentRig: {fileID: 0}
+  spawnpoints: []
 --- !u!1 &947803479
 GameObject:
   m_ObjectHideFlags: 0
@@ -7082,7 +7083,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 877446464985263710, guid: 5e963931acde9ba4dbf303151aaefaf9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3180386884544075882, guid: 5e963931acde9ba4dbf303151aaefaf9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7707,7 +7708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8629698965881495072, guid: 9ed823bd0e43b514cbe06c8437b59819, type: 3}
       propertyPath: m_ProtocolType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
