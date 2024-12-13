@@ -116,6 +116,26 @@ PrefabInstance:
       propertyPath: SyncRotAngleZ
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7713811727663924872, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860943557307559524, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7860943557307559524, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7914077745654457687, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7914077745654457687, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7953950809776270331, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -141,6 +161,33 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 381662875861617543}
   m_SourcePrefab: {fileID: 100100000, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
+--- !u!23 &470591483356990985 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5201640154432603031, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
+  m_PrefabInstance: {fileID: 5667798121616002462}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2557028208813975753 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7914077745654457687, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
+  m_PrefabInstance: {fileID: 5667798121616002462}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2712546559205755670 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7713811727663924872, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
+  m_PrefabInstance: {fileID: 5667798121616002462}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7825936489116692872 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2464418532727536662, guid: c9f73d06da39bf747b2255e6fcce787d, type: 3}
@@ -171,6 +218,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 632dbbf66a89414b957cab797c2f8f82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tempSensorScreenMeshRenderer: {fileID: 470591483356990985}
+  tempSensorScreenMaterial: {fileID: 2100000, guid: de816a2eda53ab949bef53bc682f8034, type: 2}
+  temperatureText: {fileID: 2557028208813975753}
+  celsiusDegreeText: {fileID: 2712546559205755670}
+  updateInterval: 1
 --- !u!135 &381662875861617543
 SphereCollider:
   m_ObjectHideFlags: 0
