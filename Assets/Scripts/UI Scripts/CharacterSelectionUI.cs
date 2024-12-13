@@ -19,16 +19,15 @@ namespace UI_Scripts
         [Title("Buttons")] [SerializeField] private Button closeButton;
         [SerializeField] private Button readyButton;
 
-        public void Start()
+        public void ShowLobbyDetails(Lobby lobby)
         {
-            this.gameObject.SetActive(false);
-
-            Lobby lobby = LobbyServices.Instance.GetLobby();
-
+            if (lobby == null) return;
+    
             lobbyNameText.text = LobbyNameString + lobby.Name;
             lobbyCodeText.text = LobbyCodeString + lobby.LobbyCode;
+            this.gameObject.SetActive(true);
         }
-
+        
         public void Show()
         {
             this.gameObject.SetActive(true);

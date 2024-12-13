@@ -38,7 +38,6 @@ public class LobbyServices : MonoBehaviour
         }
 
         InitializeUnityAutentication();
-
     }
 
     private async void InitializeUnityAutentication()
@@ -52,7 +51,6 @@ public class LobbyServices : MonoBehaviour
 
             await AuthenticationService.Instance.SignInAnonymouslyAsync();
         }
-
     }
 
     private async Task<Allocation> AllocateRelay()
@@ -123,15 +121,15 @@ public class LobbyServices : MonoBehaviour
             NetworkManager.Singleton.StartHost();
 
             Debug.Log("lobby has created");
-            characterSelectionUI.gameObject.SetActive(true);
 
+            // After you have successfully created or joined the lobby
+            characterSelectionUI.ShowLobbyDetails(Instance.GetLobby());
         }
 
         catch (LobbyServiceException e)
         {
             Debug.Log(e);
         }
-
     }
 
     public async void QuickJoin()
@@ -177,11 +175,6 @@ public class LobbyServices : MonoBehaviour
         {
             Debug.Log(e);
         }
-    }
-
-    public Lobby GetLobby()
-    {
-        return joinedLobby;
     }
 
     private void Update()
@@ -237,6 +230,11 @@ public class LobbyServices : MonoBehaviour
         {
             Debug.Log(e);
         }
+    }
+
+    public Lobby GetLobby()
+    {
+        return joinedLobby;
     }
 
 

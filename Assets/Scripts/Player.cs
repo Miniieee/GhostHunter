@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using ScriptableObjectsScripts;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -14,6 +15,8 @@ public class Player : NetworkBehaviour
     [SerializeField] private SetObjectPosition refEquipmentRig;
 
     private CameraRotationFollower playerVisuals;
+
+    [SerializeField] List<Vector3> spawnpoints = new List<Vector3>();
 
     private void Awake()
     {
@@ -35,6 +38,11 @@ public class Player : NetworkBehaviour
 
             refEquipmentRig.SetTargetPosition(thirdPersonTarget);
         }
+    }
+
+    public override void OnNetworkSpawn()
+    {
+        transform.position = spawnpoints[(int)OwnerClientId];
     }
 
     private void SetLayerRecursively(GameObject obj, int newLayer)
