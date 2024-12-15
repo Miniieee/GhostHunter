@@ -1,12 +1,12 @@
 //TODO
-	- Add equipments
+	Add equipments
 		- Add models
 		- Add to FP, TP and network objects
 		- Rework colliders
 		- Set rotations individually
 		- Add activation script with IActivatable interface
 	
-	- Equipments to add with activations
+	Equipments to add with activations
 		- Flashlight
 			- Turn on and off
 		- EMF Reader
@@ -39,7 +39,7 @@
 			- Trapping summoning circle
 				- Ghost walks in and checking the diary if it's type has been successfully investigated or guessed, if so game over, if not releases the ghost after a few seconds
 	
-	- UI
+	UI
 		- Notes UI
 			- get a design
 			- Panels
@@ -61,6 +61,15 @@
 		- Finish Downstairs layout
 		- 
 		
+    Sound design
+        - FMOD integration
+        - Sound effects
+            - Ghost sounds
+            - Equipment sounds
+            - Ambient sounds
+            - UI sounds
+        - Spatial audio implementation
+            
 		
     Not flushed out ideas
             - Ghosts evolving, changing their behavior		
