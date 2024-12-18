@@ -24,27 +24,25 @@ namespace Equipments
         private TextMeshProUGUI celsiusDegreeText;
 
         [SerializeField] private float updateInterval = 1f;
+        [SerializeField] private float initialInterval = 0.1f;
 
         private Material tempSensorScreenMaterialInstance;
         private bool temperatureToggle = false;
         private SphereCollider thermometerCollider;
         private float temperature;
         private int temperatureLayer;
-
-        // For timer-based updates
+        
         private float updateTimer;
-
+        
         private AreaTemperature currentAreaTemp;
 
         private void Awake()
         {
             thermometerCollider = GetComponent<SphereCollider>();
             thermometerCollider.isTrigger = true;
-
-            // Cache the layer index for performance
+            
             temperatureLayer = LayerMask.NameToLayer(TemperatureString);
-
-            // Initialize the update timer
+            
             updateTimer = updateInterval;
         }
 
@@ -65,6 +63,8 @@ namespace Equipments
                 Debug.Log("Thermometer is on player ID: " + networkObjectId);
                 thermometerCollider.enabled = true;
                 tempSensorScreenMaterialInstance.EnableKeyword("_EMISSION");
+
+                updateTimer = initialInterval;
             }
             else
             {
@@ -79,7 +79,7 @@ namespace Equipments
             // If off, we can also reset the timer
             if (!temperatureToggle)
             {
-                updateTimer = updateInterval;
+                updateTimer = initialInterval;
             }
         }
 

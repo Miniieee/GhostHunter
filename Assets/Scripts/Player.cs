@@ -16,7 +16,7 @@ public class Player : NetworkBehaviour
 
     private CameraRotationFollower playerVisuals;
 
-    [SerializeField] List<Vector3> spawnpoints = new List<Vector3>();
+    [SerializeField] private List<Vector3> spawnpoints = new List<Vector3>();
 
     private void Awake()
     {
