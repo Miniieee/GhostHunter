@@ -31,22 +31,18 @@ namespace Equipments
         private SphereCollider thermometerCollider;
         private float temperature;
         private int temperatureLayer;
-
-        // For timer-based updates
+        
         private float updateTimer;
         
-
         private AreaTemperature currentAreaTemp;
 
         private void Awake()
         {
             thermometerCollider = GetComponent<SphereCollider>();
             thermometerCollider.isTrigger = true;
-
-            // Cache the layer index for performance
+            
             temperatureLayer = LayerMask.NameToLayer(TemperatureString);
-
-            // Initialize the update timer
+            
             updateTimer = updateInterval;
         }
 
