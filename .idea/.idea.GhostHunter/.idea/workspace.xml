@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7f023d18-f4da-4262-aaa7-f24f0902f926" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GhostHunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GhostHunter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AutoSave/Main Scene Dec 14-04pm.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/AutoSave/Main Scene Dec 14-04pm.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Equipments/ThermometerActivate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Equipments/ThermometerActivate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjectsScripts/FlashlightEventSO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjectsScripts/FlashlightEventSO.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +168,7 @@
       <workItem from="1733992590471" duration="5430000" />
       <workItem from="1734272886218" duration="780000" />
       <workItem from="1734362117213" duration="749000" />
-      <workItem from="1734524720914" duration="1701000" />
+      <workItem from="1734524720914" duration="3496000" />
     </task>
     <task id="LOCAL-00001" summary="renaming">
       <option name="closed" value="true" />

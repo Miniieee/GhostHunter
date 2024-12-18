@@ -66,11 +66,7 @@ namespace Equipments
                 thermometerCollider.enabled = true;
                 tempSensorScreenMaterialInstance.EnableKeyword("_EMISSION");
 
-                if (currentAreaTemp == null)
-                {
-                    celsiusDegreeText.text = "°C";
-                    temperatureText.text = "----";
-                }
+                updateTimer = 0.1f;
             }
             else
             {
@@ -85,7 +81,7 @@ namespace Equipments
             // If off, we can also reset the timer
             if (!temperatureToggle)
             {
-                updateTimer = updateInterval;
+                updateTimer = 0.1f;
             }
         }
 
