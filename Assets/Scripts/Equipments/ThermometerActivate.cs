@@ -24,6 +24,7 @@ namespace Equipments
         private TextMeshProUGUI celsiusDegreeText;
 
         [SerializeField] private float updateInterval = 1f;
+        [SerializeField] private float initialInterval = 0.1f;
 
         private Material tempSensorScreenMaterialInstance;
         private bool temperatureToggle = false;
@@ -33,6 +34,7 @@ namespace Equipments
 
         // For timer-based updates
         private float updateTimer;
+        
 
         private AreaTemperature currentAreaTemp;
 
@@ -66,7 +68,7 @@ namespace Equipments
                 thermometerCollider.enabled = true;
                 tempSensorScreenMaterialInstance.EnableKeyword("_EMISSION");
 
-                updateTimer = 0.1f;
+                updateTimer = initialInterval;
             }
             else
             {
@@ -81,7 +83,7 @@ namespace Equipments
             // If off, we can also reset the timer
             if (!temperatureToggle)
             {
-                updateTimer = 0.1f;
+                updateTimer = initialInterval;
             }
         }
 
