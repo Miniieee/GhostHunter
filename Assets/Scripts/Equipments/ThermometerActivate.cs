@@ -65,6 +65,12 @@ namespace Equipments
                 Debug.Log("Thermometer is on player ID: " + networkObjectId);
                 thermometerCollider.enabled = true;
                 tempSensorScreenMaterialInstance.EnableKeyword("_EMISSION");
+
+                if (currentAreaTemp == null)
+                {
+                    celsiusDegreeText.text = "°C";
+                    temperatureText.text = "----";
+                }
             }
             else
             {
