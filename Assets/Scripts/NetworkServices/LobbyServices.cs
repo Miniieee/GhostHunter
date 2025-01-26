@@ -7,14 +7,17 @@ using Unity.Services.Relay;
 using System.Collections.Generic;
 using Unity.Netcode;
 using Unity.Services.Relay.Models;
-using Unity.Networking.Transport.Relay;
 using Unity.Netcode.Transports.UTP;
+using Unity.Networking.Transport.Relay;
 using System.Threading.Tasks;
 using UI_Scripts;
+// Add this import for .FirstOrDefault()
+using System.Linq;
 
 public class LobbyServices : MonoBehaviour
 {
     public static LobbyServices Instance;
+
     private const int MAX_PLAYER_AMOUNT = 5;
     private const string KEY_RELAY_JOIN_CODE = "RelayJoinCode";
 
@@ -65,7 +68,6 @@ public class LobbyServices : MonoBehaviour
             Debug.Log(e);
             return default;
         }
-
     }
 
     private async Task<string> GetRelayJoinCode(Allocation allocation)
@@ -107,25 +109,62 @@ public class LobbyServices : MonoBehaviour
 
             joinedLobby = await LobbyService.Instance.CreateLobbyAsync(lobbyName, MAX_PLAYER_AMOUNT, createLobbyOptions);
 
+            // --- Relay Allocation ---
             Allocation allocation = await AllocateRelay();
+            if (allocation == null)
+            {
+                Debug.LogError("Failed to create Relay allocation!");
+                return;
+            }
 
+            // Get the Relay join code
             string relayJoinCode = await GetRelayJoinCode(allocation);
 
-            await LobbyService.Instance.UpdateLobbyAsync(joinedLobby.Id, new UpdateLobbyOptions 
-            { Data = new Dictionary<string, DataObject> { { KEY_RELAY_JOIN_CODE, new DataObject(DataObject.VisibilityOptions.Member, relayJoinCode) } } });
-
-            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(
-                new RelayServerData(allocation, "udp")
+            // Update the Lobby with the Relay join code
+            await LobbyService.Instance.UpdateLobbyAsync(
+                joinedLobby.Id,
+                new UpdateLobbyOptions
+                {
+                    Data = new Dictionary<string, DataObject>
+                    {
+                        {
+                            KEY_RELAY_JOIN_CODE,
+                            new DataObject(DataObject.VisibilityOptions.Member, relayJoinCode)
+                        }
+                    }
+                }
             );
 
+            // ---- Manually build RelayServerData using the chosen endpoint for "udp" ----
+            var endpoint = allocation.ServerEndpoints.FirstOrDefault(e => e.ConnectionType == "udp");
+            if (endpoint == null)
+            {
+                Debug.LogError("No UDP endpoint found in the Relay allocation!");
+                return;
+            }
+
+            // For a host, the hostConnectionData is typically the same as connectionData
+            RelayServerData relayServerData = new RelayServerData(
+                endpoint.Host,
+                (ushort)endpoint.Port,
+                allocation.AllocationIdBytes,
+                allocation.ConnectionData,
+                allocation.ConnectionData, // host also uses the same for hostConnectionData
+                allocation.Key,
+                endpoint.Secure
+            );
+
+            // Set Relay server data into the UnityTransport
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
+
+            // Start as host
             NetworkManager.Singleton.StartHost();
 
-            Debug.Log("lobby has created");
+            Debug.Log("Lobby has been created with Relay and Host started!");
 
-            // After you have successfully created or joined the lobby
+            // Show the updated Lobby details
             characterSelectionUI.ShowLobbyDetails(Instance.GetLobby());
         }
-
         catch (LobbyServiceException e)
         {
             Debug.Log(e);
@@ -139,13 +178,38 @@ public class LobbyServices : MonoBehaviour
             joinedLobby = await LobbyService.Instance.QuickJoinLobbyAsync();
 
             string relayJoinCode = joinedLobby.Data[KEY_RELAY_JOIN_CODE].Value;
+
+            // Join Relay
             JoinAllocation joinAllocation = await JoinRelay(relayJoinCode);
-            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(
-                new RelayServerData(joinAllocation, "udp")
+            if (joinAllocation == null)
+            {
+                Debug.LogError("Failed to join Relay allocation!");
+                return;
+            }
+
+            // ---- Pick "udp" endpoint from the joinAllocation ----
+            var endpoint = joinAllocation.ServerEndpoints.FirstOrDefault(e => e.ConnectionType == "udp");
+            if (endpoint == null)
+            {
+                Debug.LogError("No UDP endpoint found in the joinAllocation!");
+                return;
+            }
+
+            RelayServerData relayServerData = new RelayServerData(
+                endpoint.Host,
+                (ushort)endpoint.Port,
+                joinAllocation.AllocationIdBytes,
+                joinAllocation.ConnectionData,
+                joinAllocation.HostConnectionData,
+                joinAllocation.Key,
+                endpoint.Secure
             );
 
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
+
             NetworkManager.Singleton.StartClient();
-            Debug.Log("lobby has joined");
+
+            Debug.Log("Joined the Lobby via QuickJoin, Relay client started.");
         }
         catch (LobbyServiceException e)
         {
@@ -161,15 +225,37 @@ public class LobbyServices : MonoBehaviour
 
             string relayJoinCode = joinedLobby.Data[KEY_RELAY_JOIN_CODE].Value;
 
+            // Join Relay
             JoinAllocation joinAllocation = await JoinRelay(relayJoinCode);
+            if (joinAllocation == null)
+            {
+                Debug.LogError("Failed to join Relay allocation!");
+                return;
+            }
 
-            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(
-                new RelayServerData(joinAllocation, "udp")
+            // ---- Pick "udp" endpoint from the joinAllocation ----
+            var endpoint = joinAllocation.ServerEndpoints.FirstOrDefault(e => e.ConnectionType == "udp");
+            if (endpoint == null)
+            {
+                Debug.LogError("No UDP endpoint found in the joinAllocation!");
+                return;
+            }
+
+            RelayServerData relayServerData = new RelayServerData(
+                endpoint.Host,
+                (ushort)endpoint.Port,
+                joinAllocation.AllocationIdBytes,
+                joinAllocation.ConnectionData,
+                joinAllocation.HostConnectionData,
+                joinAllocation.Key,
+                endpoint.Secure
             );
 
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
 
             NetworkManager.Singleton.StartClient();
-            Debug.Log("lobby has joined");
+
+            Debug.Log("Joined the Lobby by code, Relay client started.");
         }
         catch (LobbyServiceException e)
         {
@@ -181,7 +267,6 @@ public class LobbyServices : MonoBehaviour
     {
         HandleLobbyHeartbeat();
     }
-
 
     private async void HandleLobbyHeartbeat()
     {
@@ -199,7 +284,8 @@ public class LobbyServices : MonoBehaviour
 
     private bool IsLobbyHost()
     {
-        return joinedLobby != null && joinedLobby.HostId == AuthenticationService.Instance.PlayerId;
+        return joinedLobby != null &&
+               joinedLobby.HostId == AuthenticationService.Instance.PlayerId;
     }
 
     public async void DeleteLobby()
@@ -236,72 +322,4 @@ public class LobbyServices : MonoBehaviour
     {
         return joinedLobby;
     }
-
-
-    /*
-        private async void ListLobbies()
-        {
-            try
-            {
-                QueryLobbiesOptions queryLobbiesOptions = new QueryLobbiesOptions
-                {
-                    Count = 10,
-                    Filters = new List<QueryFilter>{
-                        new QueryFilter(
-                            field: QueryFilter.FieldOptions.AvailableSlots,
-                            op: QueryFilter.OpOptions.GT,
-                            value: "0"
-                        )
-                    },
-                    Order = new List<QueryOrder>
-                    {
-                        new QueryOrder(false, QueryOrder.FieldOptions.Created)
-                    }
-                };
-
-                QueryResponse queryResponse = await Lobbies.Instance.QueryLobbiesAsync();
-
-                Debug.Log(queryResponse.Results.Count);
-
-                foreach (Lobby lobby in queryResponse.Results)
-                {
-                    Debug.Log(lobby.Name + lobby.MaxPlayers);
-                }
-            }
-            catch (LobbyServiceException e)
-            {
-                Debug.Log(e);
-            }
-
-        }
-
-
-        private void Update()
-        {
-            HandleLobbyHeartbeat();
-        }
-
-
-        //test if it works
-        private async void HandleLobbyHeartbeat()
-        {
-            if (hostLobby == null) return;
-
-            heartbeatTimer -= Time.deltaTime;
-            if (heartbeatTimer <= 0)
-            {
-                float heartbeatTimerMax = 15;
-                heartbeatTimer = heartbeatTimerMax;
-
-                await LobbyService.Instance.SendHeartbeatPingAsync(hostLobby.Id);
-            }
-        }
-
-        private void PrintPlayers(Lobby lobby)
-        {
-            foreach (Player player in lobby.Players)
-            {
-                Debug.Log(player.Id);
-            }
-        }*/
 }
