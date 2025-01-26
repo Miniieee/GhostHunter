@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6486379978875826356, guid: 103b23030312d1e4bbb140b1d0c027e5, type: 3}
       propertyPath: m_Name
-      value: Motion sensor Variant
+      value: Motion sensor FP
       objectReference: {fileID: 0}
     - target: {fileID: 7817477484756422060, guid: 103b23030312d1e4bbb140b1d0c027e5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54,13 +54,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9113263428131656550, guid: 103b23030312d1e4bbb140b1d0c027e5, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 336964290
+      value: 161240958
       objectReference: {fileID: 0}
     - target: {fileID: 9113263428131656550, guid: 103b23030312d1e4bbb140b1d0c027e5, type: 3}
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
       value: 1038206715
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1855439340299143889, guid: 103b23030312d1e4bbb140b1d0c027e5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
