@@ -7,7 +7,7 @@
 		- Add activation script with IActivatable interface
 	
 	Equipments to add with activations
-		- Flashlight
+		x Flashlight 
 			- Turn on and off
 		- EMF Reader
 			- shows emf levels in area

@@ -22,6 +22,7 @@ public class PlayerPickup : NetworkBehaviour
     [SerializeField] private LayerMask pickupLayer;
     [SerializeField] private int maxNumberOfEquipments = 3;
     [SerializeField] private float pickupRange = 2f;
+    [SerializeField] private float dropStrength = 1f;
 
 
     public override void OnNetworkSpawn()
@@ -135,7 +136,7 @@ public class PlayerPickup : NetworkBehaviour
         spawnedObject = Instantiate(objectToSpawn, objectGrabPointFirstPersonTransform.position, objectGrabPointFirstPersonTransform.rotation, objectGrabPointFirstPersonTransform);
 
         spawnedObject.GetComponent<NetworkObject>().Spawn();
-        spawnedObject.GetComponent<Rigidbody>().AddForce(spawnedObject.transform.forward * 10f, ForceMode.Impulse);
+        spawnedObject.GetComponent<Rigidbody>().AddForce(spawnedObject.transform.forward * dropStrength, ForceMode.Impulse);
 
         OnDropClientRpc();
     }
