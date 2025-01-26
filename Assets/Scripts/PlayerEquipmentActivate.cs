@@ -82,5 +82,6 @@ public class PlayerEquipmentActivate : NetworkBehaviour
     private void OnDisable()
     {
         playerControls.Disable();
+        playerControls.Player.Activate.performed -= ctx => ActivateEquipment();
     }
 }
