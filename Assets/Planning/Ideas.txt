@@ -7,21 +7,21 @@
 		- Add activation script with IActivatable interface
 	
 	Equipments to add with activations
-		- Flashlight
+		x Flashlight 
 			- Turn on and off
 		- EMF Reader
-			- shows emf levels in area
+			x shows emf levels in area
 			- if ghost interacts with something in the area, the emf level rises, if ghost has emf level 5, there is a chance to get emf 5 level, at hunt phase it will be 5 in the area
 			- there is a cooldown for the detection after the ghost has interacted with something
 		- Thermometer
-			- shows temperature (using colliders)
+			x shows temperature (using colliders)
 		- Motion sensor
 			- mountable on walls
 		- Crucifix
 			- placeable on floor
 		- Smudge
 			- usable in hand, burns and hides player from ghost
-			    - ghost rendering layer changeing, sound as well for a few seconds (needs testing)
+			- ghost rendering layer changeing, sound as well for a few seconds (needs testing)
 		- Spirit box
 			- activation in sphere, 
 		- Microphones

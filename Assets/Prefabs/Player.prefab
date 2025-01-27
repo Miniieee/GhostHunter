@@ -788,6 +788,7 @@ MonoBehaviour:
     m_Bits: 183
   maxNumberOfEquipments: 3
   pickupRange: 2
+  dropStrength: 3
 --- !u!114 &5179115991546748802
 MonoBehaviour:
   m_ObjectHideFlags: 0
