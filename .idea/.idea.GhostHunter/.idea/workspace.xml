@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7f023d18-f4da-4262-aaa7-f24f0902f926" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GhostHunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GhostHunter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Equipments/ThermometerActivate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Equipments/ThermometerActivate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DefaultNetworkPrefabs.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DefaultNetworkPrefabs.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Equipments/Motion sensor FP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Equipments/Motion sensor FP.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Equipments/Motion sensor Network.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Equipments/Motion sensor Network.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Equipments/Motion sensor TP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Equipments/Motion sensor TP.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +44,17 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ed969b0e627d471da4848289f9c322df46ae00/7f/b3f1cf97/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/OdinNetworkBehaviourEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ghost.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine/Samples~/Input System Samples/Split Screen Multiplayer/PlayerInitializer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Runtime/UGUI/EventSystem/MoveDirection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Runtime/UGUI/UI/Core/GraphicRaycaster.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Tests/Editor/UGUI/Canvas/CanvasElementsMaintainValidPositionsWhenCameraOrthoSizeIsZero.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Tests/Editor/UGUI/RectMask2D/RectTransformPosition.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Tests/Runtime/UGUI/Canvas/CanvasSizeCorrectInAwakeAndStartScript.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Tests/Runtime/UGUI/Canvas/RectangleContainsScreenPointTest.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Tests/Runtime/UGUI/EventSystem/GraphicRaycasterTests.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Tests/Runtime/UGUI/EventSystem/PhysicsRaycasterTests.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Tests/Runtime/UGUI/ScrollRect/ScrollRectTests.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -63,7 +76,7 @@
     &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Equipments&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Updates&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -168,6 +181,8 @@
       <workItem from="1734524720914" duration="4403000" />
       <workItem from="1734535864830" duration="601000" />
       <workItem from="1734536709399" duration="163000" />
+      <workItem from="1738324282690" duration="827000" />
+      <workItem from="1739112511172" duration="827000" />
     </task>
     <task id="LOCAL-00001" summary="renaming">
       <option name="closed" value="true" />
